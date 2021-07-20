@@ -854,7 +854,7 @@ var/civmax_research = list(230,230,230)
 		if (DUTCH)
 			return "Dutch Republic"
 		if (ROMAN)
-			return "Roman Republic"
+			return "Roman Empire"
 		if (GREEK)
 			return "Greek States"
 		if (ARAB)
@@ -891,7 +891,7 @@ var/civmax_research = list(230,230,230)
 			return "Spanish"
 		if ("Dutch Republic")
 			return "Dutch"
-		if ("Roman Republic")
+		if ("Roman Empire")
 			return "Roman"
 		if ("Greek States")
 			return "Greek"
