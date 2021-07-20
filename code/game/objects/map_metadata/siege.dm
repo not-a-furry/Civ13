@@ -24,7 +24,7 @@
 	faction2 = GREEK
 	ambience = list('sound/ambience/jungle1.ogg')
 	songs = list(
-		"Divinitus:1" = 'sound/music/divinitus.ogg',)
+		"Divinitus:1" = 'sound/music/bright_side.ogg',)
 	gamemode = "Siege"
 /obj/map_metadata/siege/faction2_can_cross_blocks()
 	return (processes.ticker.playtime_elapsed >= 36000 || admin_ended_all_grace_periods)

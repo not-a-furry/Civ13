@@ -85,7 +85,7 @@
 			else
 				return "Russian Empire"
 	if (constant == ROMAN)
-		return "Roman Republic"
+		return "Roman Empire"
 
 	if (constant == GERMAN)
 		if (age >= 6)
