@@ -6,7 +6,7 @@ SERVER_NAME Fiscus Judaicus
 MASTER_DIRECTORY /home/1713
 
 ## If this server is running: Persistence mode, RP maps only, TDM only, or both (PERSISTENCE RP TDM ALL).
-ALLOWED_GAMEMODES RP
+ALLOWED_GAMEMODES ALL
 
 ## The main content of your hub message
 HUB_BODY Basically life of brian
