@@ -24,7 +24,7 @@ TESTING_PORT 8000
 HUBTESTING_PORT 11001
 
 ## Put on byond hub: uncomment this to put your server on the byond hub.
-#HUB
+HUB
 
 # Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
 LOBBY_COUNTDOWN 90
