@@ -1,11 +1,10 @@
-<h2><small><span style = "font-size: 1.20em;">Welcome to <b><span style = "font-size: 1.20em;">Civilization 13<span style = "color: #CD4C6C"> - Beta Edition</span></span></b></span></small></h2>
+<h2><small><span style = "font-size: 1.20em;">Welcome to <b><span style = "font-size: 1.20em;">Fiscus Judaicus<span style = "color: #CD4C6C"> - Super Alpha Edition</span></span></b></span></small></h2>
 <i>
 The current map is <b>{server_map}</b>.
 <br>
 This server is running {server_version}, and you are running {client_version}.
-<h2>RULES: http://civ13.com/rules</h2>
+<h2>RULES: just dont be a asshole and roleplay and we're good</h2>
 
-<h2><small>Github: https://github.com/civ13/civ13</small></h2>
-<h2><small>Discord: https://discord.gg/hBEtg4x</small></h2>
-<h2><small>Wiki: https://civ13.github.io/civ13-wiki</small></h2>
+<h2><small>Github: https://github.com/not-a-furry/Fiscus-Judaicus</small></h2>
+<h2><small>Civ13 Github: https://github.com/Civ13/Civ13</small></h2>
 </i>
