@@ -1,4 +1,4 @@
-/obj/map_metadata/occupation
+/obj/map_metadata/roman_occupation
 	ID = MAP_ROMAN_OCCUPATION
 	title = "Roman Occupation"
 	no_winner ="The round is proceeding normally."
