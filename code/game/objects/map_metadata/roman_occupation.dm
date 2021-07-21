@@ -35,7 +35,7 @@
 	)
 	is_RP = TRUE
 	var/gracedown1 = TRUE
-/obj/map_metadata/occupation/job_enabled_specialcheck(var/datum/job/J)
+/obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
 	if (J.is_occupation && istype(J, /datum/job/civilian/occupation) && J.title != "DONT USE")
 		. = TRUE
@@ -52,20 +52,20 @@
 			. = TRUE
 		else
 			. = FALSE
-/obj/map_metadata/occupation/faction2_can_cross_blocks()
+/obj/map_metadata/roman_occupation/faction2_can_cross_blocks()
 	return (processes.ticker.playtime_elapsed >= 12000 || admin_ended_all_grace_periods)
 
-/obj/map_metadata/occupation/faction1_can_cross_blocks()
+/obj/map_metadata/roman_occupation/faction1_can_cross_blocks()
 	return (processes.ticker.playtime_elapsed >= 6000 || admin_ended_all_grace_periods)
 
-/obj/map_metadata/occupation/roundend_condition_def2name(define)
+/obj/map_metadata/roman_occupation/roundend_condition_def2name(define)
 	..()
 	switch (define)
 		if (GERMAN)
 			return "SS"
 		if (CIVILIAN)
 			return "Civilian"
-/obj/map_metadata/occupation/roundend_condition_def2army(define)
+/obj/map_metadata/roman_occupation/roundend_condition_def2army(define)
 	..()
 	switch (define)
 		if (GERMAN)
@@ -73,7 +73,7 @@
 		if (CIVILIAN)
 			return "Civilians"
 
-/obj/map_metadata/occupation/army2name(army)
+/obj/map_metadata/roman_occupation/army2name(army)
 	..()
 	switch (army)
 		if ("SS Occupiers")
@@ -82,7 +82,7 @@
 			return "Civilian"
 
 
-/obj/map_metadata/occupation/cross_message(faction)
+/obj/map_metadata/roman_occupation/cross_message(faction)
 	if (faction == CIVILIAN)
 		return ""
 	else if (faction == GERMAN)
@@ -90,7 +90,7 @@
 	else
 		return ""
 
-/obj/map_metadata/occupation/reverse_cross_message(faction)
+/obj/map_metadata/roman_occupation/reverse_cross_message(faction)
 	if (faction == CIVILIAN)
 		return ""
 	else if (faction == GERMAN)
@@ -98,7 +98,7 @@
 	else
 		return ""
 
-/obj/map_metadata/occupation/check_caribbean_block(var/mob/living/human/H, var/turf/T)
+/obj/map_metadata/roman_occupation/check_caribbean_block(var/mob/living/human/H, var/turf/T)
 	if (!istype(H) || !istype(T))
 		return FALSE
 	var/area/A = get_area(T)
@@ -111,7 +111,7 @@
 			return FALSE
 	return FALSE
 
-/obj/map_metadata/occupation/New()
+/obj/map_metadata/roman_occupation/New()
 	..()
 	var/newnamee = list("UPA" = list(175,175,175,null,0,"star","#FF0000","#000000",0,0))
 	var/newnamef = list("SS" = list(175,175,175,null,0,"cross","#000000","#FFFFFF",0,0))
@@ -120,7 +120,7 @@
 	spawn(2600)
 		check_points_msg()
 		config.no_respawn_delays = FALSE
-/obj/map_metadata/occupation/proc/check_points()
+/obj/map_metadata/roman_occupation/proc/check_points()
 /*	for(var/i in points)
 		if (i[1] != "SS")
 			i[2]=0*/
@@ -153,7 +153,7 @@
 					i[2]+=curval
 	return
 
-/obj/map_metadata/occupation/proc/check_points_msg()
+/obj/map_metadata/roman_occupation/proc/check_points_msg()
 	check_points()
 	spawn(1)
 		world << "<font size = 4><span class = 'notice'><b>Current Score:</b></font></span>"
