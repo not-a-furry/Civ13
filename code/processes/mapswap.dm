@@ -190,6 +190,7 @@
 //				MAP_ABASHIRI = 5,
 //				MAP_RIVER_KWAI = 0,
 				MAP_OCCUPATION = 10,
+				MAP_ROMAN_OCCUPATION = 0
 			)
 		else if (epoch == "Civilization 13 (Nomads)")
 			maps = list(
