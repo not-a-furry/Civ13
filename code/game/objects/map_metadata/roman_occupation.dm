@@ -8,13 +8,13 @@
 	has_hunger = TRUE
 
 	faction_organization = list(
-		GERMAN)
+		ROMAN)
 
 	roundend_condition_sides = list(
-		list(GERMAN) = /area/caribbean/british,
+		list(ROMAN) = /area/caribbean/british,
 		)
 	age = "313 B.C."
-	ordinal_age = 2
+	ordinal_age = 1
 	faction_distribution_coeffs = list( ROMAN = 1)
 	battle_name = "Roman Occupation"
 	mission_start_message = "<big>Europeans</b> have built a kingdom! The <b>People</b> must thrive on their industry and live peacefully!.</big><br><span class = 'notice'><i>THIS IS AN HRP MAP - </b>No griefing will be tolerated. If you break the rules, you will be banned from the server!<i></span>" // to be replaced with the round's main event
