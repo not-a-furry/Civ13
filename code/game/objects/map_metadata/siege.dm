@@ -110,4 +110,3 @@ var/no_loop_rom = FALSE
 		win_condition.hash = 0
 	last_win_condition = win_condition.hash
 	return TRUE
-
