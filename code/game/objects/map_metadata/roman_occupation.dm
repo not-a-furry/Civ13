@@ -53,5 +53,4 @@
 			. = FALSE
 		if (J.is_ancient == TRUE)
 			. = FALSE
-
-
+*/ 
