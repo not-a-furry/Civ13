@@ -41,7 +41,7 @@ obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	else
 		. = TRUE
 
-var/no_loop_rom = FALSE
+var/no_loop_rom_occupation = FALSE
 
 /obj/map_metadata/roman_occupation/update_win_condition()
 	if (!win_condition_specialcheck())
@@ -55,13 +55,13 @@ var/no_loop_rom = FALSE
 		show_global_battle_report(null)
 		win_condition_spam_check = TRUE
 		return FALSE
-	if ((current_winner && current_loser && world.time > next_win) && no_loop_rom == FALSE)
+	if ((current_winner && current_loser && world.time > next_win) && no_loop_rom_occupation == FALSE)
 		ticker.finished = TRUE
 		var/message = "The Roman Legion has captured the fortress! The remaining Greek troops have surrendered!"
 		world << "<font size = 4><span class = 'notice'>[message]</span></font>"
 		show_global_battle_report(null)
 		win_condition_spam_check = TRUE
-		no_loop_rom = TRUE
+		no_loop_rom_occupation = TRUE
 		return FALSE
 	// German major
 	else if (win_condition.check(typesof(roundend_condition_sides[roundend_condition_sides[2]]), roundend_condition_sides[1], roundend_condition_sides[2], 1.33, TRUE))
