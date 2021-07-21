@@ -1,6 +1,6 @@
 /obj/map_metadata/occupation
 	ID = MAP_OCCUPATION
-	title = "fuckyou"
+	title = "Occupation"
 	no_winner ="The round is proceeding normally."
 	lobby_icon_state = "ww2"
 	caribbean_blocking_area_types = list(/area/caribbean/no_mans_land/invisible_wall, /area/caribbean/no_mans_land/invisible_wall/one, /area/caribbean/no_mans_land/invisible_wall/two)
