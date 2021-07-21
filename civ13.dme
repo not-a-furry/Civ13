@@ -314,6 +314,7 @@
 #include "code\game\objects\map_metadata\nomads_pangea.dm"
 #include "code\game\objects\map_metadata\nomads_wasteland.dm"
 #include "code\game\objects\map_metadata\occupation.dm"
+#include "code\game\objects\map_metadata\roman_occupation.dm"
 #include "code\game\objects\map_metadata\omaha.dm"
 #include "code\game\objects\map_metadata\pioneers.dm"
 #include "code\game\objects\map_metadata\port_arthur.dm"
