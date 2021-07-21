@@ -25,7 +25,7 @@
 	valid_weather_types = list(WEATHER_NONE, WEATHER_WET, WEATHER_EXTREME)
 	songs = list(
 		"Bright Side of Life:1" = 'sound/music/bright_side.ogg')
-	gamemode = "Medieval RP"
+	gamemode = "Occupation"
 	var/list/points = list(
 		list("SS",0,0),
 		list("UPA",0,0),
