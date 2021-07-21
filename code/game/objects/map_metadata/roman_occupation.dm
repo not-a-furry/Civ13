@@ -30,7 +30,7 @@
 	..()
 	spawn(18000)
 		seasons()
-
+/*
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
 	if (istype(J, /datum/job/roman))
