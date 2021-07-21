@@ -375,7 +375,7 @@
 "hk" = (/obj/structure/simple_door/key_door/anyone/nordic,/obj/covers/wood,/obj/roof/thatch,/turf/floor/grass,/area/caribbean/nomads/forest)
 "hl" = (/obj/covers/wood_wall/nordic,/obj/roof/thatch,/obj/item/flashlight/torch/on/unlimited,/obj/structure/sign/kiddieplaque{desc = "Tavern of Bohemia, keeping your bellies full o' drink!"; name = "Drunkard's Tavern"},/turf/floor/grass,/area/caribbean/nomads/forest)
 "hm" = (/turf/wall/indestructable/black{layer = 6},/area/caribbean/void/caves)
-"hn" = (/obj/map_metadata/bohemia,/turf/wall/indestructable/black{layer = 6},/area/caribbean/void/caves)
+"hn" = (/obj/map_metadata/roman_occupation,/turf/wall/indestructable/black{layer = 6},/area/caribbean/void/caves)
 "ho" = (/obj/covers/wood/stairs,/turf/floor/grass,/area/caribbean/nomads/forest)
 "hp" = (/obj/effect/landmark{name = "TreasuryRN"},/obj/structure/closet/crate/chest/treasury,/obj/covers/cobblestone,/turf/floor/grass,/area/caribbean/void/caves)
 "hq" = (/obj/covers/wood_wall/nordic,/obj/item/flashlight/torch/on/unlimited,/obj/roof/thatch,/obj/structure/sign/flag/medical,/turf/floor/grass,/area/caribbean/nomads/forest)
