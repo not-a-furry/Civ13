@@ -33,23 +33,5 @@
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
-	if (istype(J, /datum/job/roman) && J.is_occupation)
+	if (J.is_occupation && istype(J, /datum/job/roman))
 		. = TRUE
-		if (J.is_nomad == TRUE)
-			. = FALSE
-		if (J.is_medieval == TRUE)
-			. = TRUE
-		if (J.is_rp == TRUE)
-			. = TRUE
-		if (J.is_tanker == TRUE)
-			. = FALSE
-		if (J.is_occupation == TRUE)
-			. = FALSE
-		if (J.is_reichstag == TRUE)
-			. = FALSE
-		if (J.is_ww2 == TRUE)
-			. = FALSE
-		if (J.is_ww1 == TRUE)
-			. = FALSE
-		if (J.is_ancient == TRUE)
-			. = FALSE
