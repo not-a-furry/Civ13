@@ -67,9 +67,15 @@
 	additional_languages = list("Greek" = 10)
 	male_tts_voice = "Giorgio" //italian
 	female_tts_voice = "Bianca" //italian
-	
-/datum/job/roman/city_doctor
+
+/datum/job/roman/city_doctor //cannot be added to ancient_occupation.dm! the above will overwrite it, and its easier to do this as a sole exception
 	additional_languages = list("Greek" = 100)
+
+/datum/job/israelites
+	default_language = "Hebrew"
+	additional_languages = list("Latin" = 20, "Greek" = 10, "Arabic" = "5")
+	male_tts_voice = "Maxim"
+	female_tts_voice = "Tatyana"
 
 /datum/job/greek
 	default_language = "Greek"
