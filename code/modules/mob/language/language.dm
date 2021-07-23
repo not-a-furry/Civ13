@@ -562,6 +562,14 @@
 					H.name = H.real_name
 					H.gender = H.client.prefs.gender
 
+		if (istype(new_language, /datum/language/hebrew))
+			if (ishuman(src))
+				var/mob/living/human/H = src
+				if (H.species && H.client)
+					H.real_name = H.species.get_random_hebrew_name(H.gender, FALSE)
+					H.name = H.real_name
+					H.gender = H.client.prefs.gender
+
 		if (istype(new_language, /datum/language/greek))
 			if (ishuman(src))
 				var/mob/living/human/H = src
