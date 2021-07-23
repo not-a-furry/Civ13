@@ -20,7 +20,7 @@
 	spawn_location = "JoinLateRO"
 
 	is_commander = TRUE
-
+	is_occupation = TRUE
 	is_officer = TRUE
 
 	min_positions = 1
@@ -60,7 +60,7 @@
 	spawn_location = "JoinLateRO"
 
 	is_officer = TRUE
-
+	is_occupation = TRUE
 
 	min_positions = 2
 	max_positions = 10
@@ -141,7 +141,7 @@
 
 	spawn_location = "JoinLateRO"
 
-
+	is_occupation = TRUE
 	min_positions = 12
 	max_positions = 200
 
@@ -434,7 +434,7 @@
 
 	is_medic = TRUE
 	is_gladiator = TRUE
-
+	is_occupation = TRUE
 	min_positions = 3
 	max_positions = 8
 /datum/job/roman/doctor/equip(var/mob/living/human/H)
@@ -469,7 +469,7 @@
 	is_officer = TRUE
 	whitelisted = TRUE
 	is_gladiator = TRUE
-
+	is_occupation = TRUE
 	min_positions = 2
 	max_positions = 8
 
@@ -505,7 +505,7 @@
 
 	is_gladiator = TRUE
 	is_commander = TRUE
-
+	is_occupation = TRUE
 	is_officer = TRUE
 	whitelisted = TRUE
 
