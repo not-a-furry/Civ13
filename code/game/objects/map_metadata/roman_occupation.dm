@@ -24,7 +24,7 @@
 	songs = list(
 		"Bright Side of Life:1" = 'sound/music/bright_side.ogg',)
 	gamemode = "Medieval RP"
-	is_singlefaction = TRUE
+	//is_singlefaction = TRUE
 	force_mapgen = TRUE
 	is_RP = TRUE
 /obj/map_metadata/roman_occupation/New()
