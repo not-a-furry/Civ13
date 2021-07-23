@@ -13,7 +13,7 @@
 
 	roundend_condition_sides = list(
 		list(ROMAN) = /area/caribbean/british,
-		list(ISRAELITE) = /area/caribbean/british,
+		list(ISRAELITE) = /area/caribbean/colonies,
 		)
 	age = "313 B.C."
 	ordinal_age = 1
@@ -36,7 +36,7 @@
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
-	if ( istype(J, /datum/job/israelite) )
+	if (J.is_occupation && J.title != "DONT USE" && ( istype(J, /datum/job/roman) || istype(J, /datum/job/israelite) ) )
 		. = TRUE
 	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
 		. = FALSE
