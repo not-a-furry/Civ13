@@ -1,6 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////ROMAN///////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
+/datum/job/roman
+	faction = "Human"
+	is_ancient = TRUE
+/datum/job/roman/give_random_name(var/mob/living/human/H)
+	if (title != "Gladiator")
+		H.name = H.species.get_random_roman_name()
+		H.real_name = H.name
+	else
+		H.name = H.species.get_random_ancient_name()
+		H.real_name = H.name
+
 /datum/job/roman/garrison_captain	//Roman - Centurion
 	title = "Centurion"
 	en_meaning = "Roman Commander"
@@ -427,7 +438,7 @@
 	is_occupation = TRUE
 	min_positions = 3
 	max_positions = 8
-/datum/job/roman/doctor/equip(var/mob/living/human/H)
+/datum/job/roman/city_doctor/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 		//shoes
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
@@ -766,12 +777,12 @@
 	return TRUE
 
 //HEBREWS// i decided against adding it as a faction, i will put all my eggs in one basket (this file)
+
 /datum/job/israelite
 	faction = "Human"
 	is_ancient = TRUE
-
-/datum/job/israelite/give_random_name(var/mob/living/human/H) //idk if this is even necessary
-	H.name = H.species.get_random_hebrew_name()
+/datum/job/israelite/give_random_name(var/mob/living/human/H)
+	H.name = H.species.get_random_ancient_name()
 	H.real_name = H.name
 
 /datum/job/israelite/citizen/citizen
