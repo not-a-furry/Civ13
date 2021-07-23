@@ -73,7 +73,7 @@
 
 /datum/job/israelite
 	default_language = "Hebrew"
-	additional_languages = list("Latin" = 20, "Greek" = 10, "Arabic" = "5")
+	additional_languages = list("Latin" = 20, "Greek" = 10, "Arabic" = 5)
 	male_tts_voice = "Maxim"
 	female_tts_voice = "Tatyana"
 
