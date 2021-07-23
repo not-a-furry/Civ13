@@ -780,7 +780,6 @@
 	min_positions = 1
 	max_positions = 100
 	is_occupation = TRUE
-	is_ancient = TRUE
 	equip(var/mob/living/human/H)
 		..()
 		H.add_note("Role", "You are a <b>farthead</b>.")
