@@ -20,7 +20,7 @@
 	spawn_location = "JoinLateRO"
 
 	is_commander = TRUE
-	is_occupation = TRUE
+
 	is_officer = TRUE
 
 	min_positions = 1
@@ -60,7 +60,7 @@
 	spawn_location = "JoinLateRO"
 
 	is_officer = TRUE
-	is_occupation = TRUE
+
 
 	min_positions = 2
 	max_positions = 10
@@ -141,7 +141,7 @@
 
 	spawn_location = "JoinLateRO"
 
-	is_occupation = TRUE
+
 	min_positions = 12
 	max_positions = 200
 
@@ -426,7 +426,6 @@
 
 
 /datum/job/roman/doctor
-	additional_languages = list("Greek" = 100)
 	title = "Medicus"
 	en_meaning = "Doctor"
 	rank_abbreviation = "Medicus"
@@ -435,7 +434,7 @@
 
 	is_medic = TRUE
 	is_gladiator = TRUE
-	is_occupation = TRUE
+
 	min_positions = 3
 	max_positions = 8
 /datum/job/roman/doctor/equip(var/mob/living/human/H)
@@ -470,6 +469,7 @@
 	is_officer = TRUE
 	whitelisted = TRUE
 	is_gladiator = TRUE
+
 	min_positions = 2
 	max_positions = 8
 
@@ -505,7 +505,7 @@
 
 	is_gladiator = TRUE
 	is_commander = TRUE
-	is_occupation = TRUE
+
 	is_officer = TRUE
 	whitelisted = TRUE
 
@@ -742,19 +742,3 @@
 	give_random_name(H)
 
 	return TRUE
-
-///////////ROMAN "CITIZENS"////////////
-
-/datum/job/roman/citizen/citizen
-	title = "Civitas"
-	spawn_location = "JoinLateCivC"
-	en_meaning = "Roman Citizen"
-	min_positions = 1
-	max_positions = 100
-	is_occupation = TRUE
-	is_ancient = TRUE
-	equip(var/mob/living/human/H)
-		..()
-		H.add_note("Role", "You are a <b>Roman Citizen</b>.")
-
-////////HEBREWS, JEWS/////////
