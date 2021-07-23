@@ -28,6 +28,7 @@ var/global/datum/controller/occupations/job_master
 		job_master.faction_organized_occupations |= faction_organized_occupations_separate_lists[INDIANS]
 		job_master.faction_organized_occupations |= faction_organized_occupations_separate_lists[DUTCH]
 		job_master.faction_organized_occupations |= faction_organized_occupations_separate_lists[ROMAN]
+		job_master.faction_organized_occupations |= faction_organized_occupations_separate_lists[ISRAELITE]
 		job_master.faction_organized_occupations |= faction_organized_occupations_separate_lists[GERMAN]
 		job_master.faction_organized_occupations |= faction_organized_occupations_separate_lists[GREEK]
 		job_master.faction_organized_occupations |= faction_organized_occupations_separate_lists[ARAB]
@@ -423,6 +424,8 @@ var/global/datum/controller/occupations/job_master
 					spawn_location = "JoinLateGE"
 				if (ROMAN)
 					spawn_location = "JoinLateRO"
+				if (ISRAELITE)
+					spawn_location = "JoinLateIS"
 				if (GREEK)
 					spawn_location = "JoinLateGR"
 				if (ARAB)
@@ -504,6 +507,7 @@ var/global/datum/controller/occupations/job_master
 	var/spanish = alive_n_of_side(SPANISH)
 	var/dutch = alive_n_of_side(DUTCH)
 	var/roman = alive_n_of_side(ROMAN)
+	var/israelite = alive_n_of_side(ISRAELITE)
 	var/greek = alive_n_of_side(GREEK)
 	var/arab = alive_n_of_side(ARAB)
 	var/japanese = alive_n_of_side(JAPANESE)
@@ -523,6 +527,7 @@ var/global/datum/controller/occupations/job_master
 	var/max_indians = INFINITY
 	var/max_dutch = INFINITY
 	var/max_roman = INFINITY
+	var/max_israelite = INFINITY
 	var/max_greek = INFINITY
 	var/max_arab = INFINITY
 	var/max_japanese = INFINITY
@@ -574,6 +579,9 @@ var/global/datum/controller/occupations/job_master
 
 		if (map.faction_distribution_coeffs.Find(ROMAN))
 			max_roman = ceil(relevant_clients * map.faction_distribution_coeffs[ROMAN])
+
+		if (map.faction_distribution_coeffs.Find(ISRAELITE))
+			max_israelite = ceil(relevant_clients * map.faction_distribution_coeffs[ISRAELITE])
 
 		if (map.faction_distribution_coeffs.Find(GREEK))
 			max_greek = ceil(relevant_clients * map.faction_distribution_coeffs[GREEK])
@@ -661,6 +669,13 @@ var/global/datum/controller/occupations/job_master
 				return FALSE
 			if (roman >= max_roman)
 				return TRUE
+		
+		if (ISRAELITE)
+			if (israelite_forceEnabled)
+				return FALSE
+			if (israelite >= max_israelite)
+				return TRUE
+
 
 		if (GREEK)
 			if (greek_forceEnabled)
