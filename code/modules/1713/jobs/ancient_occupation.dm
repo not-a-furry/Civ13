@@ -216,6 +216,7 @@
 
 
 /datum/job/greek/captain	//Greek Strategus
+	is_occupation = TRUE //TODO REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	title = "Lochagos"
 	en_meaning = "Greek Commander"
 	rank_abbreviation = "Lo."
