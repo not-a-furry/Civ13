@@ -415,7 +415,6 @@
 
 
 /datum/job/roman/city_doctor //TODO: REPLACE WITH JEWISH DOCTOR
-	additional_languages = list("Greek" = 100)
 	title = "Medicus"
 	en_meaning = "Doctor"
 	rank_abbreviation = "Medicus"
@@ -746,4 +745,46 @@
 		..()
 		H.add_note("Role", "You are a <b>Roman Citizen</b>.")
 
+/datum/job/roman/citizen/citizen/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+
+//shoes
+	if (prob(30))
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval(H), slot_shoes)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/leatherboots1(H), slot_shoes)
+	if (H.gender == "male")
+		var/randcloth = rand(1,5)
+		if (randcloth == 1)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/red(H), slot_w_uniform)
+		else if (randcloth == 2)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/blue2(H), slot_w_uniform)
+		else if (randcloth == 3)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/blue(H), slot_w_uniform)
+		else if (randcloth == 4)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/leather(H), slot_w_uniform)
+		else if (randcloth == 5)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/yellow(H), slot_w_uniform)
+	else
+		var/randcloth = rand(1,3)
+		if (randcloth == 1)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf1(H), slot_w_uniform)
+		else if (randcloth == 2)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf2(H), slot_w_uniform)
+		else if (randcloth == 3)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
+	H.equip_to_slot_or_del(new/obj/item/stack/money/real/fifty(H), slot_l_store)
+
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_MEDIUM_LOW)
+	H.setStat("rifle", STAT_MEDIUM_LOW)
+	H.setStat("dexterity", STAT_NORMAL)
+	H.setStat("swords", STAT_MEDIUM_LOW)
+	H.setStat("pistol", STAT_MEDIUM_LOW)
+	H.setStat("bows", STAT_MEDIUM_LOW)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+
+
+	return TRUE
 ////////HEBREWS, JEWS/////////

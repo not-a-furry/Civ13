@@ -67,6 +67,9 @@
 	additional_languages = list("Greek" = 10)
 	male_tts_voice = "Giorgio" //italian
 	female_tts_voice = "Bianca" //italian
+	
+/datum/job/roman/city_doctor
+	additional_languages = list("Greek" = 100)
 
 /datum/job/greek
 	default_language = "Greek"
