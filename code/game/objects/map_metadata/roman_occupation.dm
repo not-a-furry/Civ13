@@ -8,7 +8,8 @@
 	has_hunger = TRUE
 
 	faction_organization = list(
-		ROMAN)
+		ROMAN,
+		HEBREW)
 
 	roundend_condition_sides = list(
 		list(ROMAN) = /area/caribbean/british,
