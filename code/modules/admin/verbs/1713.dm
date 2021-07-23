@@ -584,7 +584,6 @@ var/filipino_forceEnabled = FALSE
 	var/msg8 = "Dutch: [alive_dutch.len] alive, [heavily_injured_dutch.len] heavily injured or unconscious, [dead_dutch.len] deceased. Mortality rate: [mortality_dutch]%"
 	var/msg7 = "Natives: [alive_indians.len] alive, [heavily_injured_indians.len] heavily injured or unconscious, [dead_indians.len] deceased. Mortality rate: [mortality_indians]%"
 	var/msg9 = "Romans: [alive_roman.len] alive, [heavily_injured_roman.len] heavily injured or unconscious, [dead_roman.len] deceased. Mortality rate: [mortality_roman]%"
-	var/msg10 = "Israelites: [alive_israelite.len] alive, [heavily_injured_israelite.len] heavily injured or unconscious, [dead_israelite.len] deceased. Mortality rate: [mortality_israelite]%"
 	var/msg10 = "Greeks: [alive_greek.len] alive, [heavily_injured_greek.len] heavily injured or unconscious, [dead_greek.len] deceased. Mortality rate: [mortality_greek]%"
 	var/msg11 = "Arabs: [alive_arab.len] alive, [heavily_injured_arab.len] heavily injured or unconscious, [dead_arab.len] deceased. Mortality rate: [mortality_arab]%"
 	var/msg12 = "Japanese: [alive_japanese.len] alive, [heavily_injured_japanese.len] heavily injured or unconscious, [dead_japanese.len] deceased. Mortality rate: [mortality_japanese]%"
@@ -594,7 +593,7 @@ var/filipino_forceEnabled = FALSE
 	var/msg16 = "Vietnamese: [alive_vietnamese.len] alive, [heavily_injured_vietnamese.len] heavily injured or unconscious, [dead_vietnamese.len] deceased. Mortality rate: [mortality_vietnamese]%"
 	var/msg17 = "Chinese: [alive_chinese.len] alive, [heavily_injured_chinese.len] heavily injured or unconscious, [dead_chinese.len] deceased. Mortality rate: [mortality_chinese]%"
 	var/msg18 = "Filipino: [alive_filipino.len] alive, [heavily_injured_filipino.len] heavily injured or unconscious, [dead_filipino.len] deceased. Mortality rate: [mortality_filipino]%"
-
+	var/msg19 = "Israelites: [alive_israelite.len] alive, [heavily_injured_israelite.len] heavily injured or unconscious, [dead_israelite.len] deceased. Mortality rate: [mortality_israelite]%"
 	var/msg_npcs = "NPCs: [faction1_npcs] americans alive, [faction2_npcs] japanese alive."
 
 	var/msg_companies= ""
