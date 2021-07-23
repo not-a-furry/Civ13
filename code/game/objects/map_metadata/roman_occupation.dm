@@ -33,7 +33,7 @@
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
-	if (J.is_occupation && istype(J, /datum/job/roman))
+	if (J.is_occupation && J.title != "DONT USE" && istype(J, /datum/job/roman))
 		. = TRUE
 	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
 		. = FALSE

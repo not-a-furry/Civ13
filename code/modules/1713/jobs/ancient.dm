@@ -426,6 +426,7 @@
 
 
 /datum/job/roman/doctor
+	additional_languages = list("Greek" = 100)
 	title = "Medicus"
 	en_meaning = "Doctor"
 	rank_abbreviation = "Medicus"
@@ -744,90 +745,16 @@
 
 ///////////ROMAN "CITIZENS"////////////
 
-/datum/job/roman/citizen/jewish
-	spawn_location = "JoinLateCiv"
-	can_be_female = TRUE
-	rank_abbreviation = ""
-	title = "DONT USE"
-	default_language = "Hebrew"
-	is_occupation = TRUE
-	var/randrole = "none"
-	var/original_eyes = "Black"
-	var/original_facial = "Shaved"
-	var/original_hair = "Black"
-	can_be_female = TRUE
-
-/datum/job/roman/citizen/equip(var/mob/living/human/H)
-	if (!H)	return FALSE
-	H.nationality = "none"
-	H.give_nationality_occupation()
-	if (H.original_job == "Auxillary Police")
-		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/clothing/under/ww2/german_ss(H), slot_w_uniform)
-		H.equip_to_slot_or_del(new /obj/item/clothing/head/ww2/german_fieldcap(H), slot_head)
-		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/jap/camp_guard_SS(H), slot_belt)
-		H.equip_to_slot_or_del(new /obj/item/ammo_magazine/c762x38mmR(H), slot_l_store)
-		var/obj/item/clothing/under/uniform = H.w_uniform
-		var/obj/item/clothing/accessory/armband/nsdap = new /obj/item/clothing/accessory/armband/nsdap(null)
-		var/obj/item/clothing/accessory/holster/hip/holsterh = new /obj/item/clothing/accessory/holster/hip(null)
-		uniform.attackby(nsdap, H)
-		uniform.attackby(holsterh, H)
-		holsterh.attackby(new/obj/item/weapon/gun/projectile/revolver/nagant_revolver, H)
-		var/obj/item/stack/money/rubles/RUB = new /obj/item/stack/money/rubles(H)
-		RUB.amount = 75
-		H.equip_to_slot_or_del(RUB, slot_r_store)
-		H.setStat("strength", STAT_HIGH)
-		H.setStat("crafting", STAT_NORMAL)
-		H.setStat("rifle", STAT_HIGH)
-		H.setStat("dexterity", STAT_MEDIUM_LOW)
-		H.setStat("swords", STAT_NORMAL)
-		H.setStat("pistol", STAT_HIGH)
-		H.setStat("bows", STAT_NORMAL)
-		H.setStat("medical", STAT_MEDIUM_HIGH)
-		H.setStat("machinegun", STAT_MEDIUM_HIGH)
-		H.equip_to_slot_or_del(new /obj/item/weapon/civilian_passport(H), slot_wear_id)
-		H.gulag_languages()
-		return TRUE
-	else
-//shoes
-		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/heavyboots/wrappedboots(H), slot_shoes)
-//clothes
-		if (prob(50))
-			H.equip_to_slot_or_del(new /obj/item/clothing/under/ww2/civ1(H), slot_w_uniform)
-		else
-			H.equip_to_slot_or_del(new /obj/item/clothing/under/ww2/civ2(H), slot_w_uniform)
-//head
-		if (prob(30))
-			if (prob(50))
-				H.equip_to_slot_or_del(new /obj/item/clothing/head/ww2/sov_ushanka(H), slot_head)
-			else
-				H.equip_to_slot_or_del(new /obj/item/clothing/head/ww2/sov_ushanka/down(H), slot_head)
-		else if (prob(50))
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/ww/papakha(H), slot_head)
-
-		var/obj/item/stack/money/rubles/RUB = new /obj/item/stack/money/rubles(H)
-		RUB.amount = 50
-		H.equip_to_slot_or_del(RUB, slot_r_store)
-		H.setStat("strength", STAT_MEDIUM_LOW)
-		H.setStat("crafting", STAT_NORMAL)
-		H.setStat("rifle", STAT_NORMAL)
-		H.setStat("dexterity", STAT_MEDIUM_LOW)
-		H.setStat("swords", STAT_NORMAL)
-		H.setStat("pistol", STAT_NORMAL)
-		H.setStat("bows", STAT_NORMAL)
-		H.setStat("medical", STAT_MEDIUM_LOW)
-		H.equip_to_slot_or_del(new /obj/item/weapon/civilian_passport(H), slot_wear_id)
-		H.gulag_languages()
-
-/datum/job/roman/citizen/farmer
-	title = "Civilian Farmer"
+/datum/job/roman/citizen/citizen
+	title = "Civitas"
 	spawn_location = "JoinLateCivC"
-	en_meaning = ""
+	en_meaning = "Roman Citizen"
 	min_positions = 1
-	max_positions = 3
+	max_positions = 100
+	is_occupation = TRUE
+	is_ancient = TRUE
 	equip(var/mob/living/human/H)
 		..()
-		H.add_note("Role", "You are a <b>Farmer</b>. Your job is to work for the german occupiers in either the fields or the woods. Misbehaviour can be met with severe punishment.")
-		var/obj/item/clothing/under/uniform = H.w_uniform
-		var/obj/item/clothing/accessory/medal/pin/worker/farmer = new /obj/item/clothing/accessory/medal/pin/worker/farmer(null)
-		uniform.attackby(farmer, H)
+		H.add_note("Role", "You are a <b>Roman Citizen</b>.")
+
+////////HEBREWS, JEWS/////////
