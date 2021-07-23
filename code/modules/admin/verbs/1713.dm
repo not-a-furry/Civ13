@@ -678,7 +678,7 @@ var/filipino_forceEnabled = FALSE
 		msg17 = null
 	if (map && !map.faction_organization.Find(FILIPINO))
 		msg18 = null
-		if (map && !map.faction_organization.Find(ISRAELITE))
+	if (map && !map.faction_organization.Find(ISRAELITE))
 		msg19 = null
 	var/public = "Yes"
 
