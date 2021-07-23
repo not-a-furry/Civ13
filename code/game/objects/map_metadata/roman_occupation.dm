@@ -33,7 +33,7 @@
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
-	if (J.is_occupation && istype(J, /datum/job/roman))
+	if (istype(J, /datum/job/roman))
 		. = TRUE
 	else 
 		. = FALSE
