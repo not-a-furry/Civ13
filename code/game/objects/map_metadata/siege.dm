@@ -9,15 +9,15 @@
 
 	faction_organization = list(
 		ROMAN,
-		GREEK)
+		ISRAELITE)
 
 	roundend_condition_sides = list(
 		list(ROMAN) = /area/caribbean/colonies,
-		list(GREEK) = /area/caribbean/greek
+		list(ISRAELITE) = /area/caribbean/greek
 		)
 	age = "313 B.C."
 	ordinal_age = 1
-	faction_distribution_coeffs = list(ROMAN = 0.5, GREEK = 0.5)
+	faction_distribution_coeffs = list(ROMAN = 0.5, ISRAELITE = 0.5)
 	battle_name = "Syracusan siege"
 	mission_start_message = "<font size=4>The <b>Roman</b> troops are sieging a <b>Greek</b> fortress near Syracuse! The Greeks will win if they manage to hold the fortress for 35 minutes. <br> The siege will start in <b>6 minutes</b>.</font>"
 	faction1 = ROMAN

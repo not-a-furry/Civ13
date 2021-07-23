@@ -776,7 +776,7 @@
 
 	return TRUE
 
-//HEBREWS// i decided against adding it as a faction, i will put all my eggs in one basket (this file)
+//HEBREWS//
 
 /datum/job/israelite
 	faction = "Human"
