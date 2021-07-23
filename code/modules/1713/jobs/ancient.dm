@@ -744,7 +744,7 @@
 
 ///////////ROMAN "CITIZENS"////////////
 
-/datum/job/civilian/occupation/jewish
+/datum/job/roman/citizen/jewish
 	spawn_location = "JoinLateCiv"
 	can_be_female = TRUE
 	rank_abbreviation = ""
@@ -757,7 +757,7 @@
 	var/original_hair = "Black"
 	can_be_female = TRUE
 
-/datum/job/civilian/occupation/equip(var/mob/living/human/H)
+/datum/job/roman/citizen/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 	H.nationality = "none"
 	H.give_nationality_occupation()
@@ -819,7 +819,7 @@
 		H.equip_to_slot_or_del(new /obj/item/weapon/civilian_passport(H), slot_wear_id)
 		H.gulag_languages()
 
-/datum/job/civilian/occupation/farmer
+/datum/job/roman/citizen/farmer
 	title = "Civilian Farmer"
 	spawn_location = "JoinLateCivC"
 	en_meaning = ""
