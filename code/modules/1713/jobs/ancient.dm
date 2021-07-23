@@ -828,7 +828,6 @@
 	equip(var/mob/living/human/H)
 		..()
 		H.add_note("Role", "You are a <b>Farmer</b>. Your job is to work for the german occupiers in either the fields or the woods. Misbehaviour can be met with severe punishment.")
-		randrole = "Farmer"
 		var/obj/item/clothing/under/uniform = H.w_uniform
 		var/obj/item/clothing/accessory/medal/pin/worker/farmer = new /obj/item/clothing/accessory/medal/pin/worker/farmer(null)
 		uniform.attackby(farmer, H)
