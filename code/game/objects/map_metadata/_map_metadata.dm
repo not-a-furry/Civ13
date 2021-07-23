@@ -715,6 +715,7 @@ var/civmax_research = list(230,230,230)
 		PIRATES = 0,
 		DUTCH = 0,
 		ROMAN = 0,
+		ISRAELITE = 0,
 		GREEK = 0,
 		ARAB = 0,
 		JAPANESE = 0,
@@ -817,6 +818,8 @@ var/civmax_research = list(230,230,230)
 			return "Dutch"
 		if (ROMAN)
 			return "Roman"
+		if (ISRAELITE)
+			return "Israelite"
 		if (GERMAN)
 			return "German"
 		if (GREEK)
@@ -855,6 +858,8 @@ var/civmax_research = list(230,230,230)
 			return "Dutch Republic"
 		if (ROMAN)
 			return "Roman Empire"
+		if (Israelite)
+			return "Israel"
 		if (GREEK)
 			return "Greek States"
 		if (ARAB)
@@ -893,6 +898,8 @@ var/civmax_research = list(230,230,230)
 			return "Dutch"
 		if ("Roman Empire")
 			return "Roman"
+		if ("Israel")
+			return "Israel"
 		if ("Greek States")
 			return "Greek"
 		if ("Arabic Caliphate")
