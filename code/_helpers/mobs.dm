@@ -212,9 +212,9 @@ proc/random_hebrew_name(gender, species = "Human")
 
 	if (!current_species || current_species.name_language == null)
 		if (gender==FEMALE)
-			return capitalize(pick(first_names_male_hebrew)) + " " + capitalize(pick(middle_names_hebrew)) + " " + capitalize(pick(last_names_hebrew))
+			return capitalize(pick(first_names_male_hebrew)) + " " + capitalize(pick(last_names_hebrew))
 		else
-			return capitalize(pick(first_names_male_hebrew)) + " " + capitalize(pick(middle_names_hebrew)) + " " + capitalize(pick(last_names_hebrew))
+			return capitalize(pick(first_names_male_hebrew)) + " " + capitalize(pick(last_names_hebrew))
 	else
 		return current_species.get_random_hebrew_name(gender)
 
