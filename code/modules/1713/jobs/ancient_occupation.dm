@@ -751,8 +751,46 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
 		//clothes
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/weapon/key/ancient/roman(H), slot_l_store)
-	H.equip_to_slot_or_del(new /obj/item/weapon/doctor_handbook(H), slot_r_store)
+
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_MEDIUM_LOW)
+	H.setStat("rifle", STAT_MEDIUM_LOW)
+	H.setStat("dexterity", STAT_NORMAL)
+	H.setStat("swords", STAT_MEDIUM_LOW)
+	H.setStat("pistol", STAT_MEDIUM_LOW)
+	H.setStat("bows", STAT_MEDIUM_LOW)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+//HEBREWS// i decided against adding it as a faction, i will put all my eggs in one basket (this file)
+/datum/job/israelite
+	faction = "Human"
+	is_ancient = TRUE
+
+/datum/job/israelite/give_random_name(var/mob/living/human/H)
+	H.name = H.species.get_random_hebrew_name()
+	H.real_name = H.name
+
+/datum/job/roman/citizen/citizen
+	title = "jew"
+	spawn_location = "JoinLateCivC"
+	en_meaning = "jew"
+	min_positions = 1
+	max_positions = 100
+	is_occupation = TRUE
+	is_ancient = TRUE
+	equip(var/mob/living/human/H)
+		..()
+		H.add_note("Role", "You are a <b>farthead</b>.")
+
+/datum/job/israelite/citizen/citizen/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
 
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_MEDIUM_LOW)
