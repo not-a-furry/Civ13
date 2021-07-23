@@ -9,18 +9,20 @@
 
 	faction_organization = list(
 		ROMAN,
-		ISRAELITES)
+		ISRAELITE,)
 
 	roundend_condition_sides = list(
 		list(ROMAN) = /area/caribbean/british,
+		list(ISRAELITE) = /area/caribbean/british,
 		)
 	age = "313 B.C."
 	ordinal_age = 1
-	faction_distribution_coeffs = list(ROMAN = 0.35, HEBREW = 0.65)
+	faction_distribution_coeffs = list(ROMAN = 0.35, ISRAELITE = 0.65)
 	battle_name = "Roman Occupation"
 	mission_start_message = "<big>Europeans</b> have built a kingdom! The <b>People</b> must thrive on their industry and live peacefully!.</big><br><span class = 'notice'><i>THIS IS AN HRP MAP - </b>No griefing will be tolerated. If you break the rules, you will be banned from the server!<i></span>" // to be replaced with the round's main event
 	ambience = list('sound/ambience/jungle1.ogg')
 	faction1 = ROMAN
+	faction2 = ISRAELITE
 	songs = list(
 		"Bright Side of Life:1" = 'sound/music/bright_side.ogg',)
 	gamemode = "Medieval RP"
