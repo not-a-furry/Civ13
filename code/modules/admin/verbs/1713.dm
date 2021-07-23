@@ -167,6 +167,7 @@ var/spanish_toggled = TRUE
 var/portuguese_toggled = TRUE
 var/dutch_toggled = TRUE
 var/roman_toggled = TRUE
+var/israelite_toggled = TRUE
 var/greek_toggled = TRUE
 var/arab_toggled = TRUE
 var/japanese_toggled = TRUE
@@ -195,6 +196,7 @@ var/filipino_toggled = TRUE
 	choices += "DUTCH ([dutch_toggled ? "ENABLED" : "DISABLED"])"
 	choices += "INDIANS ([indians_toggled ? "ENABLED" : "DISABLED"])"
 	choices += "ROMAN ([roman_toggled ? "ENABLED" : "DISABLED"])"
+	choices += "ISRAELITE ([israelite_toggled ? "ENABLED" : "DISABLED"])"
 	choices += "GREEK ([greek_toggled ? "ENABLED" : "DISABLED"])"
 	choices += "ARAB ([arab_toggled ? "ENABLED" : "DISABLED"])"
 	choices += "JAPANESE ([japanese_toggled ? "ENABLED" : "DISABLED"])"
@@ -255,6 +257,10 @@ var/filipino_toggled = TRUE
 		roman_toggled = !roman_toggled
 		world << "<span class = 'warning'>The Roman faction has been [roman_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>"
 		message_admins("[key_name(src)] changed the Roman faction 'enabled' setting to [roman_toggled].")
+	else if (findtext(choice, "ISRAELITE"))
+		greek_toggled = !israelite_toggled
+		world << "<span class = 'warning'>The Israelite faction has been [israelite_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>"
+		message_admins("[key_name(src)] changed the Israelite faction 'enabled' setting to [israelite_toggled].")
 	else if (findtext(choice, "GREEK"))
 		greek_toggled = !greek_toggled
 		world << "<span class = 'warning'>The Greek faction has been [greek_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>"
@@ -292,6 +298,7 @@ var/french_forceEnabled = FALSE
 var/indians_forceEnabled = FALSE
 var/dutch_forceEnabled = FALSE
 var/roman_forceEnabled = FALSE
+var/israelite_forceEnabled = FALSE
 var/greek_forceEnabled = FALSE
 var/arab_forceEnabled = FALSE
 var/japanese_forceEnabled = FALSE
@@ -320,6 +327,7 @@ var/filipino_forceEnabled = FALSE
 	choices += "PORTUGUESE ([portuguese_forceEnabled ? "FORCIBLY ENABLED" : "NOT FORCIBLY ENABLED"])"
 	choices += "SPANISH ([spanish_forceEnabled ? "FORCIBLY ENABLED" : "NOT FORCIBLY ENABLED"])"
 	choices += "GREEK ([greek_forceEnabled ? "FORCIBLY ENABLED" : "NOT FORCIBLY ENABLED"])"
+	choices += "ISRAELITE ([israelite_forceEnabled ? "FORCIBLY ENABLED" : "NOT FORCIBLY ENABLED"])"
 	choices += "ROMAN ([roman_forceEnabled ? "FORCIBLY ENABLED" : "NOT FORCIBLY ENABLED"])"
 	choices += "ARAB ([arab_forceEnabled ? "FORCIBLY ENABLED" : "NOT FORCIBLY ENABLED"])"
 	choices += "JAPANESE ([japanese_forceEnabled ? "FORCIBLY ENABLED" : "NOT FORCIBLY ENABLED"])"
@@ -381,6 +389,10 @@ var/filipino_forceEnabled = FALSE
 		roman_forceEnabled = !roman_forceEnabled
 		world << "<span class = 'notice'>The Roman faction [roman_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>"
 		message_admins("[key_name(src)] changed the Roman faction 'forceEnabled' setting to [roman_forceEnabled].")
+	else if (findtext(choice, "ISRAELITE"))
+		israelite_forceEnabled = !israelite_forceEnabled
+		world << "<span class = 'notice'>The Greek faction [israelite_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>"
+		message_admins("[key_name(src)] changed the Israelite faction 'forceEnabled' setting to [israelite_forceEnabled].")
 	else if (findtext(choice, "GREEK"))
 		greek_forceEnabled = !greek_forceEnabled
 		world << "<span class = 'notice'>The Greek faction [greek_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>"
@@ -455,6 +467,7 @@ var/filipino_forceEnabled = FALSE
 	var/total_portuguese = alive_portuguese.len + dead_portuguese.len + heavily_injured_portuguese.len
 	var/total_dutch = alive_dutch.len + dead_dutch.len + heavily_injured_dutch.len
 	var/total_roman = alive_roman.len + dead_roman.len + heavily_injured_roman.len
+	var/total_israelite = alive_israelite.len + dead_israelite.len + heavily_injured_israelite.len
 	var/total_greek = alive_greek.len + dead_greek.len + heavily_injured_greek.len
 	var/total_arab = alive_arab.len + dead_arab.len + heavily_injured_arab.len
 	var/total_japanese = alive_japanese.len + dead_japanese.len + heavily_injured_japanese.len
@@ -472,6 +485,7 @@ var/filipino_forceEnabled = FALSE
 	var/mortality_coefficient_french = 0
 	var/mortality_coefficient_indians = 0
 	var/mortality_coefficient_civilian = 0
+	var/mortality_coefficient_israelite = 0
 	var/mortality_coefficient_greek = 0
 	var/mortality_coefficient_dutch = 0
 	var/mortality_coefficient_roman = 0
@@ -511,6 +525,9 @@ var/filipino_forceEnabled = FALSE
 	if (dead_greek.len > 0)
 		mortality_coefficient_greek = dead_greek.len/total_greek
 
+	if (dead_israelite.len > 0)
+		mortality_coefficient_israelite = dead_israelite.len/total_israelite
+
 	if (dead_roman.len > 0)
 		mortality_coefficient_roman = dead_roman.len/total_roman
 
@@ -547,6 +564,7 @@ var/filipino_forceEnabled = FALSE
 	var/mortality_indians = round(mortality_coefficient_indians*100)
 	var/mortality_dutch = round(mortality_coefficient_dutch*100)
 	var/mortality_roman = round(mortality_coefficient_roman*100)
+	var/mortality_israelite = round(mortality_coefficient_israelite*100)
 	var/mortality_greek = round(mortality_coefficient_greek*100)
 	var/mortality_arab = round(mortality_coefficient_arab*100)
 	var/mortality_japanese = round(mortality_coefficient_japanese*100)
@@ -566,6 +584,7 @@ var/filipino_forceEnabled = FALSE
 	var/msg8 = "Dutch: [alive_dutch.len] alive, [heavily_injured_dutch.len] heavily injured or unconscious, [dead_dutch.len] deceased. Mortality rate: [mortality_dutch]%"
 	var/msg7 = "Natives: [alive_indians.len] alive, [heavily_injured_indians.len] heavily injured or unconscious, [dead_indians.len] deceased. Mortality rate: [mortality_indians]%"
 	var/msg9 = "Romans: [alive_roman.len] alive, [heavily_injured_roman.len] heavily injured or unconscious, [dead_roman.len] deceased. Mortality rate: [mortality_roman]%"
+	var/msg10 = "Israelites: [alive_israelite.len] alive, [heavily_injured_israelite.len] heavily injured or unconscious, [dead_israelite.len] deceased. Mortality rate: [mortality_israelite]%"
 	var/msg10 = "Greeks: [alive_greek.len] alive, [heavily_injured_greek.len] heavily injured or unconscious, [dead_greek.len] deceased. Mortality rate: [mortality_greek]%"
 	var/msg11 = "Arabs: [alive_arab.len] alive, [heavily_injured_arab.len] heavily injured or unconscious, [dead_arab.len] deceased. Mortality rate: [mortality_arab]%"
 	var/msg12 = "Japanese: [alive_japanese.len] alive, [heavily_injured_japanese.len] heavily injured or unconscious, [dead_japanese.len] deceased. Mortality rate: [mortality_japanese]%"
@@ -642,6 +661,8 @@ var/filipino_forceEnabled = FALSE
 		msg8 = null
 	if (map && !map.faction_organization.Find(ROMAN))
 		msg9 = null
+	if (map && !map.faction_organization.Find(ISRAELITE))
+		msg10 = null
 	if (map && !map.faction_organization.Find(GREEK))
 		msg10 = null
 	if (map && !map.faction_organization.Find(ARAB))
