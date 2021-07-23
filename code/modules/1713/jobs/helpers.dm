@@ -73,6 +73,7 @@
 				if (H.original_job && H.stat != DEAD)
 					if (H.original_job.base_type_flag() == ISRAELITE)
 						BATTLEREPORT_VARIABLE_CHECK(H)
+							++.
 		if (GREEK)
 			for (var/mob/living/human/H in player_list)
 				if (H.original_job && H.stat != DEAD)
