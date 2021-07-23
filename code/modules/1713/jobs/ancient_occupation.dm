@@ -773,7 +773,7 @@
 	H.name = H.species.get_random_hebrew_name()
 	H.real_name = H.name
 
-/datum/job/roman/citizen/citizen
+/datum/job/israelite/citizen/citizen
 	title = "jew"
 	spawn_location = "JoinLateCivC"
 	en_meaning = "jew"

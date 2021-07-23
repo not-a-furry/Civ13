@@ -71,7 +71,7 @@
 /datum/job/roman/city_doctor //cannot be added to ancient_occupation.dm! the above will overwrite it, and its easier to do this as a sole exception
 	additional_languages = list("Greek" = 100)
 
-/datum/job/israelites
+/datum/job/israelite
 	default_language = "Hebrew"
 	additional_languages = list("Latin" = 20, "Greek" = 10, "Arabic" = "5")
 	male_tts_voice = "Maxim"

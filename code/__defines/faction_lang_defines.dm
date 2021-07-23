@@ -5,7 +5,7 @@
 #define BRITISH "BRITISH"
 #define ROMAN "ROMAN"
 #define AMERICAN "AMERICAN"
-#define ISRAELITES "ISRAELITES"
+#define ISRAELITE "ISRAELITE"
 
 // used for languages only
 #define ENGLISH "ENGLISH"
