@@ -802,6 +802,8 @@ var/global/redirect_all_players = null
 			dat += "[alive_civilians.len] Civilians "
 	if (GREEK in map.faction_organization)
 		dat += "[alive_greek.len] Greeks "
+	if (ISRAELITE in map.faction_organization)
+		dat += "[alive_israelite.len] Israelites "
 	if (ROMAN in map.faction_organization)
 		dat += "[alive_roman.len] Romans "
 	if (ARAB in map.faction_organization)

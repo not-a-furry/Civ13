@@ -9,6 +9,7 @@ var/list/alive_portuguese = list()
 var/list/alive_indians = list()
 var/list/alive_dutch = list()
 var/list/alive_greek = list()
+var/list/alive_israelite = list()
 var/list/alive_roman = list()
 var/list/alive_arab = list()
 var/list/alive_japanese = list()
@@ -30,6 +31,7 @@ var/list/heavily_injured_indians = list()
 var/list/heavily_injured_dutch = list()
 var/list/heavily_injured_roman = list()
 var/list/heavily_injured_greek = list()
+var/list/heavily_injured_israelite = list()
 var/list/heavily_injured_arab = list()
 var/list/heavily_injured_japanese = list()
 var/list/heavily_injured_russian = list()
@@ -103,6 +105,10 @@ var/list/recently_died = list()
 				dead = dead_roman
 				injured = heavily_injured_roman
 				alive = alive_roman
+			if (ISRAELITE)
+				dead = dead_israelite
+				injured = heavily_injured_israelite
+				alive = alive_israelite
 			if (GREEK)
 				dead = dead_greek
 				injured = heavily_injured_greek

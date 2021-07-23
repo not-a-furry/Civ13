@@ -660,8 +660,6 @@ var/filipino_forceEnabled = FALSE
 		msg8 = null
 	if (map && !map.faction_organization.Find(ROMAN))
 		msg9 = null
-	if (map && !map.faction_organization.Find(ISRAELITE))
-		msg10 = null
 	if (map && !map.faction_organization.Find(GREEK))
 		msg10 = null
 	if (map && !map.faction_organization.Find(ARAB))
@@ -680,6 +678,8 @@ var/filipino_forceEnabled = FALSE
 		msg17 = null
 	if (map && !map.faction_organization.Find(FILIPINO))
 		msg18 = null
+		if (map && !map.faction_organization.Find(ISRAELITE))
+		msg19 = null
 	var/public = "Yes"
 
 	if (shower && !private)
@@ -727,6 +727,8 @@ var/filipino_forceEnabled = FALSE
 				world << "<font size=3>[msg17]</font>"
 			if (msg18)
 				world << "<font size=3>[msg18]</font>"
+			if (msg19)
+				world << "<font size=3>[msg19]</font>"
 			if (map.civilizations && msg_religions != "")
 				world << "<font size=3>[msg_religions]</font>"
 			if (map.civilizations && msg_factions != "")
@@ -776,3 +778,5 @@ var/filipino_forceEnabled = FALSE
 			shower << msg17
 		if (msg18)
 			shower << msg18
+		if (msg19)
+			shower << msg19

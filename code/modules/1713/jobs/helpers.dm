@@ -68,6 +68,11 @@
 					if (H.original_job.base_type_flag() == ROMAN)
 						BATTLEREPORT_VARIABLE_CHECK(H)
 							++.
+		if (ISRAELITE)
+			for (var/mob/living/human/H in player_list)
+				if (H.original_job && H.stat != DEAD)
+					if (H.original_job.base_type_flag() == ISRAELITE)
+						BATTLEREPORT_VARIABLE_CHECK(H)
 		if (GREEK)
 			for (var/mob/living/human/H in player_list)
 				if (H.original_job && H.stat != DEAD)
@@ -140,6 +145,8 @@
 			return dead_civilians.len + heavily_injured_civilians.len + alive_civilians.len
 		if (ROMAN)
 			return dead_roman.len + heavily_injured_roman.len + alive_roman.len
+		if (ISRAELITE)
+			return dead_israelite.len + heavily_injured_israelite.len + alive_israelite.len
 		if (GREEK)
 			return dead_greek.len + heavily_injured_greek.len + alive_greek.len
 		if (ARAB)
