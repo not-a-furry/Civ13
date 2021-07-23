@@ -35,3 +35,5 @@
 	..()
 	if (J.is_occupation && istype(J, /datum/job/roman))
 		. = TRUE
+	else 
+		. = FALSE
