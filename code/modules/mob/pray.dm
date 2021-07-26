@@ -23,7 +23,7 @@
 		if (R_ADMIN & C.holder.rights)
 			if (C.is_preference_enabled(/datum/client_preference/admin/show_chat_prayers))
 				C << msg
-				C << "<i>Please do <big>not</big> respond to prayers with revives or anything that might affect the course of the round in favor of one faction.</i>"
+				C << "<i>this was sent by a <big><fart man/big></i>" //TODO: Make is so that a job with is_religious will send a message reminding admans this guy is a priest, rabbi, whatever the fuck
 
 	usr << "Your prayers have been received by the gods."
 

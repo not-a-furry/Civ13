@@ -11,10 +11,10 @@
 /obj/item/weapon/storage/bible/orthodox
 	icon_state ="orthodoxbible"
 	item_state = "orthodoxbible"
-	
+
 /obj/item/weapon/storage/bible/torah
 	name = "Torah"
-	desc = "The central and most important document of Judaism"
+	desc = "The central and most important document of Judaism."
 
 /obj/item/weapon/storage/bible/booze
 	name = "bible"
