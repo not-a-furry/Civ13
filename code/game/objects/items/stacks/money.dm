@@ -497,7 +497,7 @@
 
 /obj/item/stack/money/dollar/onehundy
 	amount = 100
-/obj/item/stack/money/dollar/onehundy
+/obj/item/stack/money/dollar/fifty
 	amount = 50
 /obj/item/stack/money/dollar/twenty
 	amount = 20
