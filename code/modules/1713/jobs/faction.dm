@@ -27,6 +27,7 @@
 #define TEAM_VI 16
 #define TEAM_CH 17
 #define TEAM_FP 18
+#define TEAM_IS 19
 var/global/soldiers[17]
 
 /datum/faction
@@ -178,7 +179,6 @@ var/global/soldiers[17]
 /datum/faction/roman/base_type()
 	return "/datum/faction/roman"
 
-
 /datum/faction/greek
 	icon_state = ""
 	title = "Greek Soldier"
@@ -186,6 +186,14 @@ var/global/soldiers[17]
 
 /datum/faction/greek/base_type()
 	return "/datum/faction/greek"
+
+/datum/faction/israelite
+	icon_state = ""
+	title = "Israelite Soldier"
+	team = TEAM_IS
+
+/datum/faction/israelite/base_type()
+	return "/datum/faction/israelite"
 
 /datum/faction/arab
 	icon_state = ""
@@ -231,6 +239,9 @@ var/global/soldiers[17]
 	else if (istype(J, /datum/job/greek))
 		if ("[type]" == "/datum/faction/greek")
 			soldiers[GREEK]++
+	else if (istype(J, /datum/job/israelite))
+		if ("[type]" == "/datum/faction/israelite")
+			soldiers[ISRAELITE]++
 	else if (istype(J, /datum/job/arab))
 		if ("[type]" == "/datum/faction/arab")
 			soldiers[ARAB]++

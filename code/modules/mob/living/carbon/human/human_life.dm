@@ -1443,6 +1443,8 @@
 						holder2.icon_state = "arab_basic"
 				if (GREEK)
 					holder2.icon_state = "greek_basic"
+				if (ISRAELITE)
+					holder2.icon_state = "israelite_basic"
 				if (ROMAN)
 					holder2.icon_state = "roman_basic"
 				if (JAPANESE)

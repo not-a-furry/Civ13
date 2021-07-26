@@ -118,6 +118,8 @@
 		. = GERMAN
 	else if (istype(src, /datum/job/greek))
 		. = GREEK
+	else if (istype(src, /datum/job/israelite))
+		. = ISRAELITE
 	else if (istype(src, /datum/job/arab))
 		. = ARAB
 	else if (istype(src, /datum/job/american))
