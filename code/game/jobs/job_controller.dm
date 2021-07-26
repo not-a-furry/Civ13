@@ -459,6 +459,8 @@ var/global/datum/controller/occupations/job_master
 				spawn_location = "JoinLateNL"
 			else if (findtext(H.original_job.spawn_location, "JoinLateRO"))
 				spawn_location = "JoinLateRO"
+			else if (findtext(H.original_job.spawn_location, "JoinLateIS"))
+				spawn_location = "JoinLateIS"
 			else if (findtext(H.original_job.spawn_location, "JoinLateGR"))
 				spawn_location = "JoinLateGR"
 			else if (findtext(H.original_job.spawn_location, "JoinLateAR"))

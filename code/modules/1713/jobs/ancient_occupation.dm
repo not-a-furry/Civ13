@@ -37,6 +37,7 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/roman_centurion(H), slot_head)
 		//weapons
 	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gladius/iron(H), slot_belt)
+	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/fifty(H), slot_l_store)
 	H.add_note("Role", "You are a <b>[title]</b>, the leader of a <b>Centuria</b>, a company of Legionaries. Organize your <b>Decurions</b> and lead your soldiers to victory!</b>.")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -158,6 +159,7 @@
 	H.equip_to_slot_or_del(new /obj/item/weapon/material/pilum(H), slot_back)
 	H.equip_to_slot_or_del(new /obj/item/weapon/shield/roman(H), slot_l_hand)
 	H.equip_to_slot_or_del(new /obj/item/weapon/material/pilum(H), slot_r_hand)
+	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/twenty(H), slot_l_store)
 	H.add_note("Role", "You are a <b>[title]</b>, a soldier of the Roman Army. You are equipped with two <b>Pila</b> javelins, your shield and a <b>Gladius</b>.")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -227,7 +229,6 @@
 
 
 /datum/job/greek/captain	//Greek Strategus
-	is_occupation = TRUE //TODO REMOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	title = "Lochagos"
 	en_meaning = "Greek Commander"
 	rank_abbreviation = "Lo."
@@ -426,7 +427,7 @@
 	return TRUE
 
 
-/datum/job/roman/city_doctor //TODO: REPLACE WITH JEWISH DOCTOR
+/datum/job/roman/city_doctor //unused, maybe use in the future? idk
 	title = "Medicus"
 	en_meaning = "Doctor"
 	rank_abbreviation = "Medicus"
@@ -435,7 +436,7 @@
 
 	is_medic = TRUE
 	is_gladiator = TRUE
-	is_occupation = TRUE
+	//is_occupation = TRUE
 	min_positions = 3
 	max_positions = 8
 /datum/job/roman/city_doctor/equip(var/mob/living/human/H)
@@ -520,7 +521,7 @@
 	H.equip_to_slot_or_del(new /obj/item/weapon/key/ancient/roman(H), slot_l_store)
 	H.equip_to_slot_or_del(new /obj/item/weapon/horn(H), slot_r_store)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/laurelcrown(H), slot_head)
-
+	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/onehundy(H), slot_l_store)
 	H.add_note("Role", "You are the <b>[title]</b>. You are responsable for organizing the games. You can use the interface of the <b>Gladiator Combat Organizer</b> to turn automatic mode on and off. If you decide to manage the games yourself, you will need to attribute the victory using the <b>Gladiator Ledger</b> - click on it and choose the winner!")
 
 	H.setStat("strength", STAT_MEDIUM_HIGH)
@@ -762,7 +763,7 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
 		//clothes
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
-
+	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/twenty(H), slot_l_store)
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_MEDIUM_LOW)
 	H.setStat("rifle", STAT_MEDIUM_LOW)
@@ -824,7 +825,7 @@
 		else if (randcloth == 3)
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
-
+		H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/five(H), slot_l_store)
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_MEDIUM_LOW)
 	H.setStat("rifle", STAT_MEDIUM_LOW)
@@ -878,7 +879,7 @@
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/weapon/doctor_handbook(H), slot_r_store)
-
+	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/twenty(H), slot_l_store)
 	H.add_note("Role", "You are a <b>[title]</b>. Keep the arena clean and the men alive.")
 	H.setStat("strength", STAT_NORMAL)
 	H.setStat("crafting", STAT_MEDIUM_HIGH)
@@ -893,7 +894,7 @@
 /datum/job/israelite/citizen/priest
 	title = "Rabbi"
 	en_meaning = "Rabbi"
-	rank_abbreviation = ""
+	rank_abbreviation = "Rabbi"
 
 	spawn_location = "JoinLateCivC"
 
@@ -919,7 +920,7 @@
 	H.equip_to_slot_or_del(new/obj/item/weapon/storage/bible(H), slot_l_hand)
 	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/twenty(H), slot_l_store)
 	
-	H.add_note("Role", "You are a <b>[title]</b>, in charge of the colony's religious affairs, assisting the doctor, and if possible, of converting the natives...")
+	H.add_note("Role", "You are a <b>[title]</b>, the spiritual leaders of all Israelites.")
 	H.setStat("strength", STAT_MEDIUM_LOW)
 	H.setStat("crafting", STAT_NORMAL)
 	H.setStat("rifle", STAT_MEDIUM_LOW)
