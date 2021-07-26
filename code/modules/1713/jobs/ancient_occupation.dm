@@ -782,7 +782,7 @@
 	faction = "Human"
 	is_ancient = TRUE
 /datum/job/israelite/give_random_name(var/mob/living/human/H)
-	H.name = H.species.get_random_ancient_name()
+	H.name = H.species.get_random_hebrew_name()
 	H.real_name = H.name
 
 /datum/job/israelite/citizen/citizen
