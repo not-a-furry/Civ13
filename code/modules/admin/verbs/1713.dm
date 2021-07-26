@@ -258,7 +258,7 @@ var/filipino_toggled = TRUE
 		world << "<span class = 'warning'>The Roman faction has been [roman_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>"
 		message_admins("[key_name(src)] changed the Roman faction 'enabled' setting to [roman_toggled].")
 	else if (findtext(choice, "ISRAELITE"))
-		greek_toggled = !israelite_toggled
+		israelite_toggled = !israelite_toggled
 		world << "<span class = 'warning'>The Israelite faction has been [israelite_toggled ? "<b><i>ENABLED</i></b>" : "<b><i>DISABLED</i></b>"].</span>"
 		message_admins("[key_name(src)] changed the Israelite faction 'enabled' setting to [israelite_toggled].")
 	else if (findtext(choice, "GREEK"))
@@ -391,7 +391,7 @@ var/filipino_forceEnabled = FALSE
 		message_admins("[key_name(src)] changed the Roman faction 'forceEnabled' setting to [roman_forceEnabled].")
 	else if (findtext(choice, "ISRAELITE"))
 		israelite_forceEnabled = !israelite_forceEnabled
-		world << "<span class = 'notice'>The Greek faction [israelite_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>"
+		world << "<span class = 'notice'>The Israelite faction [israelite_forceEnabled ? "has been forcibly <b>enabled</b>" : "<b>is no longer forcibly enabled</b>"].</span>"
 		message_admins("[key_name(src)] changed the Israelite faction 'forceEnabled' setting to [israelite_forceEnabled].")
 	else if (findtext(choice, "GREEK"))
 		greek_forceEnabled = !greek_forceEnabled

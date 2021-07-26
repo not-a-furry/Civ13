@@ -786,9 +786,9 @@
 	H.real_name = H.name
 
 /datum/job/israelite/citizen/citizen
-	title = "jew"
+	title = "Jewish Citizen"
 	spawn_location = "JoinLateCivC"
-	en_meaning = "jew"
+	en_meaning = "Jewish Citizen"
 	min_positions = 1
 	max_positions = 100
 	is_occupation = TRUE

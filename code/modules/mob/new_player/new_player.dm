@@ -842,6 +842,7 @@ var/global/redirect_all_players = null
 		BRITISH = FALSE,
 		ROMAN = FALSE,
 		GREEK = FALSE,
+		ISRAELITE = FALSE,
 		ARAB = FALSE,
 		RUSSIAN = FALSE,
 		JAPANESE = FALSE,
@@ -905,6 +906,9 @@ var/global/redirect_all_players = null
 			job_is_available = FALSE
 
 		if (istype(job, /datum/job/greek) && !greek_toggled)
+			job_is_available = FALSE
+		
+		if (istype(job, /datum/job/israelite) && !israelite_toggled)
 			job_is_available = FALSE
 
 		if (istype(job, /datum/job/arab) && !arab_toggled)
