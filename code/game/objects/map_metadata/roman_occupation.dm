@@ -9,7 +9,7 @@
 
 	faction_organization = list(
 		ROMAN,
-		ISRAELITE,)
+		ISRAELITE)
 
 	roundend_condition_sides = list(
 		list(ROMAN) = /area/caribbean/british,
