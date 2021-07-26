@@ -786,7 +786,7 @@
 	H.real_name = H.name
 
 /datum/job/israelite/citizen/citizen
-	title = "Jewish Citizen"
+	title = "B'nei Yisrael"
 	spawn_location = "JoinLateCivC"
 	en_meaning = "Jewish Citizen"
 	min_positions = 1
@@ -794,14 +794,38 @@
 	is_occupation = TRUE
 	equip(var/mob/living/human/H)
 		..()
-		H.add_note("Role", "You are a <b>farthead</b>.")
+		H.add_note("Role", "You are a <b>[title]</b>. ")
 
 /datum/job/israelite/citizen/citizen/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
-		//clothes
-	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
+//shoes
+	if (prob(30))
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval(H), slot_shoes)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/leatherboots1(H), slot_shoes)
+	if (H.gender == "male")
+		var/randcloth = rand(1,5)
+		if (randcloth == 1)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/red(H), slot_w_uniform)
+		else if (randcloth == 2)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/blue2(H), slot_w_uniform)
+		else if (randcloth == 3)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/blue(H), slot_w_uniform)
+		else if (randcloth == 4)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/leather(H), slot_w_uniform)
+		else if (randcloth == 5)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/yellow(H), slot_w_uniform)
+	else
+		var/randcloth = rand(1,3)
+		if (randcloth == 1)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf1(H), slot_w_uniform)
+		else if (randcloth == 2)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf2(H), slot_w_uniform)
+		else if (randcloth == 3)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
+	H.equip_to_slot_or_del(new/obj/item/stack/money/real/fifty(H), slot_l_store)
 
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_MEDIUM_LOW)
@@ -811,6 +835,75 @@
 	H.setStat("pistol", STAT_MEDIUM_LOW)
 	H.setStat("bows", STAT_MEDIUM_LOW)
 	H.setStat("medical", STAT_MEDIUM_LOW)
+
+
+	return TRUE
+
+/datum/job/israelite/citizen/doctor
+	title = "Rofe"
+	en_meaning = "Doctor"
+	rank_abbreviation = "Rofe"
+
+	spawn_location = "JoinLateROG"
+
+	is_medic = TRUE
+	is_occupation = TRUE
+	min_positions = 3
+	max_positions = 8
+/datum/job/israelite/citizen/doctor/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+		//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/weapon/key/ancient/roman(H), slot_l_store)
+	H.equip_to_slot_or_del(new /obj/item/weapon/doctor_handbook(H), slot_r_store)
+
+	H.add_note("Role", "You are a <b>[title]</b>. Keep the arena clean and the men alive.")
+	H.setStat("strength", STAT_NORMAL)
+	H.setStat("crafting", STAT_MEDIUM_HIGH)
+	H.setStat("rifle", STAT_NORMAL)
+	H.setStat("dexterity", STAT_MEDIUM_HIGH)
+	H.setStat("swords", STAT_NORMAL)
+	H.setStat("pistol", STAT_NORMAL)
+	H.setStat("bows", STAT_NORMAL)
 	give_random_name(H)
+	return TRUE
+
+/datum/job/israelite/citizen/priest
+	title = "Rabbi"
+	en_meaning = "Rabbi"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateCivC"
+
+	is_religious = TRUE
+	is_occupation = TRUE
+
+	min_positions = 1
+	max_positions = 20
+
+/datum/job/israelite/citizen/priest/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval(H), slot_shoes)
+
+	if (H.gender == "male")
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/chaplain(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/chaplain_hood(H), slot_head)
+		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/jacket/chaplain(H), slot_wear_suit)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/nun(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/nun_hood(H), slot_head)
+
+	H.add_note("Role", "You are a <b>[title]</b>, in charge of the colony's religious affairs, assisting the doctor, and if possible, of converting the natives...")
+	H.setStat("strength", STAT_MEDIUM_LOW)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_MEDIUM_LOW)
+	H.setStat("dexterity", STAT_NORMAL)
+	H.setStat("swords", STAT_MEDIUM_LOW)
+	H.setStat("pistol", STAT_MEDIUM_LOW)
+	H.setStat("bows", STAT_MEDIUM_LOW)
+	H.setStat("medical", STAT_HIGH)
 
 	return TRUE

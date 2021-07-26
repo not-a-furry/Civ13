@@ -77,6 +77,9 @@
 	male_tts_voice = "Maxim"
 	female_tts_voice = "Tatyana"
 
+/datum/job/israelite/citizen/doctor
+	additional_languages = list("Greek" = 100)
+
 /datum/job/greek
 	default_language = "Greek"
 	additional_languages = list("Latin" = 10)
