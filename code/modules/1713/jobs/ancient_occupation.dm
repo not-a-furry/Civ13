@@ -833,8 +833,7 @@
 	H.setStat("pistol", STAT_MEDIUM_LOW)
 	H.setStat("bows", STAT_MEDIUM_LOW)
 	H.setStat("medical", STAT_MEDIUM_LOW)
-
-
+	give_random_name(H)
 	return TRUE
 
 /datum/job/israelite/citizen/doctor
@@ -848,6 +847,7 @@
 	is_occupation = TRUE
 	min_positions = 3
 	max_positions = 8
+
 /datum/job/israelite/citizen/doctor/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 
@@ -928,5 +928,5 @@
 	H.setStat("pistol", STAT_MEDIUM_LOW)
 	H.setStat("bows", STAT_MEDIUM_LOW)
 	H.setStat("medical", STAT_HIGH)
-
+	give_random_name(H)
 	return TRUE

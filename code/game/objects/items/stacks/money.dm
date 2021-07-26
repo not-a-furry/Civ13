@@ -203,6 +203,13 @@
 		icon_state = "goldcoin_pile"
 		value = 16
 		return ..()
+	else if (map.ordinal_age == 1)
+		name = "Shekels"
+		desc = "Shekels, the Hebrew money of Palestine."
+		singular_name = "shekels"
+		icon_state = "goldcoin_pile"
+		value = 16
+		return ..()
 	else
 		name = "gulden"
 		desc = "A gold coin, worth 60 kreuzers or 240 pfennige."
@@ -233,6 +240,13 @@
 		singular_name = "doubloon"
 		icon_state = "goldcoin_pile"
 		value = 32
+		return ..()
+	else if (map.ordinal_age == 1)
+		name = "Gold Shekels"
+		desc = "Gold shekels, worth twenty shekels."
+		singular_name = "goldshekels"
+		icon_state = "goldcoin_pile"
+		value = 16
 		return ..()
 	else
 		name = "thaler"
