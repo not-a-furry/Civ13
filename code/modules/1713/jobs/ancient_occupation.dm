@@ -917,7 +917,7 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/nun(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/nun_hood(H), slot_head)
 
-	H.equip_to_slot_or_del(new /obj/item/weapon/storage/bible(H), slot_l_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/storage/bible/torah(H), slot_l_hand)
 	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/five(H), slot_l_store)
 	
 	H.add_note("Role", "You are a <b>[title]</b>, the spiritual leaders of all Israelites.")
