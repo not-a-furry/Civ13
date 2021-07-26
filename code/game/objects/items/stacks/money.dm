@@ -173,7 +173,7 @@
 		return ..()
 	else if (map.ordinal_age == 1)
 		name = "Shekels"
-		desc = "A silver shekel, used as the main form of currency in Palestine."
+		desc = "A silver shekel, used as the main form of currency in Israel."
 		singular_name = "shekel"
 		icon_state = "silvercoin_pile"
 		value = 8

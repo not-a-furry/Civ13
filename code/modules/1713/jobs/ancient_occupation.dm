@@ -755,7 +755,7 @@
 	is_ancient = TRUE
 	equip(var/mob/living/human/H)
 		..()
-		H.add_note("Role", "You are a <b>Roman Citizen</b>.")
+		H.add_note("Role", "You are a <b>Roman Citizen</b>. You make up the elites of society, and are above the locals.")
 
 /datum/job/roman/citizen/citizen/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
@@ -879,7 +879,7 @@
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/weapon/doctor_handbook(H), slot_r_store)
-	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/twenty(H), slot_l_store)
+	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/ten(H), slot_l_store)
 	H.add_note("Role", "You are a <b>[title]</b>. Keep the arena clean and the men alive.")
 	H.setStat("strength", STAT_NORMAL)
 	H.setStat("crafting", STAT_MEDIUM_HIGH)
@@ -918,7 +918,7 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/nun_hood(H), slot_head)
 
 	H.equip_to_slot_or_del(new /obj/item/weapon/storage/bible(H), slot_l_hand)
-	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/twenty(H), slot_l_store)
+	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/five(H), slot_l_store)
 	
 	H.add_note("Role", "You are a <b>[title]</b>, the spiritual leaders of all Israelites.")
 	H.setStat("strength", STAT_MEDIUM_LOW)
