@@ -917,7 +917,8 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/nun_hood(H), slot_head)
 
 	H.equip_to_slot_or_del(new/obj/item/weapon/storage/bible(H), slot_l_hand)
-
+	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/twenty(H), slot_l_store)
+	
 	H.add_note("Role", "You are a <b>[title]</b>, in charge of the colony's religious affairs, assisting the doctor, and if possible, of converting the natives...")
 	H.setStat("strength", STAT_MEDIUM_LOW)
 	H.setStat("crafting", STAT_NORMAL)
