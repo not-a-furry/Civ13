@@ -444,7 +444,6 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
 		//clothes
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/weapon/key/ancient/roman(H), slot_l_store)
 	H.equip_to_slot_or_del(new /obj/item/weapon/doctor_handbook(H), slot_r_store)
 
 	H.add_note("Role", "You are a <b>[title]</b>. Keep the arena clean and the men alive.")
@@ -825,7 +824,6 @@
 		else if (randcloth == 3)
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
-	H.equip_to_slot_or_del(new/obj/item/stack/money/real/fifty(H), slot_l_store)
 
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_MEDIUM_LOW)
@@ -852,11 +850,33 @@
 	max_positions = 8
 /datum/job/israelite/citizen/doctor/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
-		//shoes
-	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
-		//clothes
-	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/weapon/key/ancient/roman(H), slot_l_store)
+
+//shoes
+	if (prob(30))
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval(H), slot_shoes)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/leatherboots1(H), slot_shoes)
+	if (H.gender == "male")
+		var/randcloth = rand(1,5)
+		if (randcloth == 1)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/red(H), slot_w_uniform)
+		else if (randcloth == 2)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/blue2(H), slot_w_uniform)
+		else if (randcloth == 3)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/blue(H), slot_w_uniform)
+		else if (randcloth == 4)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/leather(H), slot_w_uniform)
+		else if (randcloth == 5)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/yellow(H), slot_w_uniform)
+	else
+		var/randcloth = rand(1,3)
+		if (randcloth == 1)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf1(H), slot_w_uniform)
+		else if (randcloth == 2)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf2(H), slot_w_uniform)
+		else if (randcloth == 3)
+			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/weapon/doctor_handbook(H), slot_r_store)
 
 	H.add_note("Role", "You are a <b>[title]</b>. Keep the arena clean and the men alive.")
@@ -895,6 +915,8 @@
 	else
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/nun(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/nun_hood(H), slot_head)
+
+	H.equip_to_slot_or_del(new/obj/item/weapon/storage/bible(H), slot_l_hand)
 
 	H.add_note("Role", "You are a <b>[title]</b>, in charge of the colony's religious affairs, assisting the doctor, and if possible, of converting the natives...")
 	H.setStat("strength", STAT_MEDIUM_LOW)
