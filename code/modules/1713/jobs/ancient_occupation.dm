@@ -25,7 +25,8 @@
 
 	min_positions = 1
 	max_positions = 1
-/datum/job/roman/emperor/equip(var/mob/living/human/H)
+
+/datum/job/roman/governor/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 		//shoes
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
@@ -224,7 +225,7 @@
 
 /datum/job/roman/citizen/citizen/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
-	H.add_note("Role", "You are a <b>Roman Citizen</b>. You make up the elites of society, and are above the locals.")
+	H.add_note("Role", "You are a <b>[title]</b>. You make up the elites of society, and are above the locals.")
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
 		//clothes
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
@@ -582,11 +583,11 @@
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
 
-	H.equip_to_slot_or_del(new/obj/item/stack/money/real/fifty(H), slot_l_store)
+	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/fifty(H), slot_l_store)
 	H.equip_to_slot_or_del(new/obj/item/weapon/key/civ/inn(H), slot_r_store)
 	H.equip_to_slot_or_del(new/obj/item/weapon/material/knife/butcher(H), slot_belt)
 
-	H.add_note("Role", "You are a <b>Inkeeper</b>. Your job is to run an Inn and house tired customers!")
+	H.add_note("Role", "You are a <b>[title]</b>. Your job is to run an Inn and house tired customers!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
 	H.setStat("rifle", STAT_MEDIUM_LOW)
@@ -638,11 +639,11 @@
 		else if (randcloth == 3)
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/civf3(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/kerchief(H), slot_head)
-	H.equip_to_slot_or_del(new/obj/item/stack/money/real/fifty(H), slot_l_store)
+	H.equip_to_slot_or_del(new/obj/item/stack/money/dollar/fifty(H), slot_l_store)
 	H.equip_to_slot_or_del(new/obj/item/weapon/key/civ/inn(H), slot_r_store)
 	H.equip_to_slot_or_del(new/obj/item/weapon/material/knife/butcher(H), slot_belt)
 
-	H.add_note("Role", "You are a <b>Barkeeper</b>. Your job is to man the Tavern to supply the people with wine and food!")
+	H.add_note("Role", "You are a <b>[title]</b>. Your job is to man the Tavern to supply the people with wine and food!")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
 	H.setStat("rifle", STAT_MEDIUM_LOW)
