@@ -18,12 +18,16 @@
 
 	var/image/cross = image('icons/obj/storage.dmi',"bible")
 	msg = "<span class = 'notice'>\icon[cross] <b><font color=purple>PRAY: </font>[key_name(src, TRUE)] (<A HREF='?_src_=holder;adminmoreinfo=\ref[src]'>?</A>) (<A HREF='?_src_=holder;adminplayeropts=\ref[src]'>PP</A>) (<A HREF='?_src_=vars;Vars=\ref[src]'>VV</A>) (<A HREF='?_src_=holder;subtlemessage=\ref[src]'>SM</A>) ([admin_jump_link(src, src)]) (<A HREF='?_src_=holder;secretsadmin=check_antagonist'>CA</A>) (<A HREF='?_src_=holder;adminspawncookie=\ref[src]'>SC</a>):</b> [msg]</span>"
-
+	var/mob/living/human/H = src
 	for (var/client/C in admins)
 		if (R_ADMIN & C.holder.rights)
 			if (C.is_preference_enabled(/datum/client_preference/admin/show_chat_prayers))
-				C << msg
-				C << "<i>this was sent by a <big><fart man/big></i>" //TODO: Make is so that a job with is_religious will send a message reminding admans this guy is a priest, rabbi, whatever the fuck
+				if (H.original_job.is_religious == TRUE)
+					C << msg
+					C << "<i>This was sent by a <big>religious leader</big></i>" //TODO: Make is so that a job with is_religious will send a message reminding admans this guy is a priest, rabbi, whatever the fuck
+				else 
+					C << msg
+					C << "<i>This was sent by a plebian</i>"
 
 	usr << "Your prayers have been received by the gods."
 
