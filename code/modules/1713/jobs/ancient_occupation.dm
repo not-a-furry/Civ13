@@ -224,12 +224,10 @@
 	min_positions = 1
 	max_positions = 100
 	is_occupation = TRUE
-		..()
-		H.add_note("Role", "You are a <b>Roman Citizen</b>. You make up the elites of society, and are above the locals.")
 
 /datum/job/roman/citizen/citizen/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
-
+	H.add_note("Role", "You are a <b>Roman Citizen</b>. You make up the elites of society, and are above the locals.")
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
 		//clothes
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga(H), slot_w_uniform)
@@ -292,12 +290,10 @@
 	min_positions = 1
 	max_positions = 100
 	is_occupation = TRUE
-		..()
-		H.add_note("Role", "You are a <b>[title]</b>. ")
 
 /datum/job/israelite/citizen/citizen/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
-
+	H.add_note("Role", "You are a <b>[title]</b>.")
 //shoes
 	if (prob(30))
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval(H), slot_shoes)
