@@ -43,7 +43,6 @@
 /datum/job/var/is_rp = FALSE
 /datum/job/var/is_medic = FALSE
 /datum/job/var/is_ss_panzer = FALSE
-/datum/job/var/is_civil_war = FALSE
 /datum/job/var/is_deal = FALSE
 /datum/job/var/is_pacific = FALSE
 /datum/job/var/is_korean_war = FALSE
