@@ -164,7 +164,7 @@
 
 	return TRUE
 
-/datum/job/roman/auxilia/israelite
+/datum/job/roman/auxilia/israelite/give_random_name(var/mob/living/human/H)
 	default_language = "Latin"
 	additional_languages = list("Hebrew" = 100, "Greek" = 10, "Arabic" = 5)
 	H.name = H.species.get_random_hebrew_name(H.gender)
