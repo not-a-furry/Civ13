@@ -16,7 +16,7 @@ You will need a windows machine or a virtual machine running it from another OS.
 
 
 ## Setting up a Server
-1. Refer to https://www.reddit.com/r/SS13/wiki/hosting_a_server/. I use Debian on the official server, Ubuntu works too and is better if you have no idea what you're doing. Use Debian if you do, because Ubuntu uses like 50mb more memory for absolutely no reason but Canonical wanting to bloat the shit out of it.
+1. Refer to https://www.reddit.com/r/SS13/wiki/hosting_a_server/. I use Debian on the official server, Ubuntu works too and is better if you have no idea what you're doing. Use Debian if you can, because Ubuntu uses like 50mb more memory for absolutely no reason but Canonical wanting to bloat the shit out of it.
 
 1.1 Create a user on the server to prevent running everything as root. This isn't mentioned in the guide, and is HEAVILY HEAVILY recommended. In fact, this isn't optional. DO THIS. Refer to https://linuxize.com/post/how-to-add-and-delete-users-on-debian-9/. You can log in to the server as root using "ssh root@(ip here)", but always switch to the user you created to run the server, using "su (name here)". You can log into the server using your username such as "ssh (name here)@(ip here)", this however will only work if you log into the server using a password, not a key.
 
