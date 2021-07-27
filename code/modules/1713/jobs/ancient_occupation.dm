@@ -165,11 +165,14 @@
 	return TRUE
 
 /datum/job/roman/auxilia/israelite
-	give_random_name(var/mob/living/human/H)
 	default_language = "Latin"
 	additional_languages = list("Hebrew" = 100, "Greek" = 10, "Arabic" = 5)
+
+/datum/job/roman/auxilia/israelite/give_random_name(var/mob/living/human/H)
 	H.name = H.species.get_random_hebrew_name(H.gender)
 	H.real_name = H.name
+
+/datum/job/roman/auxilia/israelite/soldier
 	title = "Israel Auxilia"
 	en_meaning = "Israel Auxiliary"
 	rank_abbreviation = ""
@@ -221,7 +224,6 @@
 	min_positions = 1
 	max_positions = 100
 	is_occupation = TRUE
-	equip(var/mob/living/human/H)
 		..()
 		H.add_note("Role", "You are a <b>Roman Citizen</b>. You make up the elites of society, and are above the locals.")
 
@@ -290,7 +292,6 @@
 	min_positions = 1
 	max_positions = 100
 	is_occupation = TRUE
-	equip(var/mob/living/human/H)
 		..()
 		H.add_note("Role", "You are a <b>[title]</b>. ")
 
