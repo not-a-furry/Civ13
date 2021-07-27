@@ -22,12 +22,12 @@
 	for (var/client/C in admins)
 		if (R_ADMIN & C.holder.rights)
 			if (C.is_preference_enabled(/datum/client_preference/admin/show_chat_prayers))
-				if (H.original_job.is_religious == TRUE)
+				if (H.original_job.is_religious == TRUE) //check if the prayers come from religious heads, or garbage plebians
 					C << msg
-					C << "<i>This was sent by a <big>religious leader</big></i>" //TODO: Make is so that a job with is_religious will send a message reminding admans this guy is a priest, rabbi, whatever the fuck
+					C << "<i>This was sent by a <big>religious leader</big>. Their prayers are important!</i>"
 				else 
 					C << msg
-					C << "<i>This was sent by a plebian</i>"
+					C << "<i>This was sent by a plebian.</i>"
 
 	usr << "Your prayers have been received by the gods."
 
