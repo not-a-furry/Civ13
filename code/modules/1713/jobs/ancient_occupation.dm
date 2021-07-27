@@ -333,6 +333,7 @@
 	return TRUE
 
 /datum/job/israelite/citizen/doctor //TODO: ADD BACKPACK WITH MEDICINE, AND ADD BACKPACKS TO ALL OTHER ROLES
+	additional_languages = list("Greek" = 100)
 	title = "Rofe"
 	en_meaning = "Doctor"
 	rank_abbreviation = "Rofe"
