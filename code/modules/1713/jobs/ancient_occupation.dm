@@ -169,7 +169,6 @@
 	additional_languages = list("Hebrew" = 100, "Greek" = 10, "Arabic" = 5)
 	H.name = H.species.get_random_hebrew_name(H.gender)
 	H.real_name = H.name
-	H.circumcised = TRUE
 	title = "Israel Auxilia"
 	en_meaning = "Israel Auxiliary"
 	rank_abbreviation = ""
@@ -279,7 +278,6 @@
 /datum/job/israelite
 	faction = "Human"
 	is_ancient = TRUE
-	H.circumcised = TRUE //this is a thing?
 /datum/job/israelite/give_random_name(var/mob/living/human/H)
 	H.name = H.species.get_random_hebrew_name()
 	H.real_name = H.name
