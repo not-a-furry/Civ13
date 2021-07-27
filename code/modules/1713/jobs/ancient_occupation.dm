@@ -34,6 +34,7 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga/purple(H), slot_w_uniform)
 	H.equip_to_slot_or_del(new /obj/item/weapon/horn(H), slot_r_store)
 	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/onehundy(H), slot_l_store)
+	world << "<b><big>[H.real_name] is the [title]!</big></b>"
 	H.add_note("Role", "You are the <b>[title]</b>. Govern over your people through violent crucifixion and benevolent gladiatorial games! Do not anger the locals too much though, they are prone to revolting.")
 
 	H.setStat("strength", STAT_MEDIUM_HIGH)
@@ -664,7 +665,6 @@
 	spawn_location = "JoinLateROG"
 	
 	is_commander = TRUE
-	is_occupation = TRUE
 	is_officer = TRUE
 	whitelisted = TRUE
 	is_imperator = TRUE
@@ -681,6 +681,7 @@
 	H.equip_to_slot_or_del(new /obj/item/weapon/horn(H), slot_r_store)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/laurelcrown(H), slot_head) //emperor bears the wreath of Caesar. All hail to him!
 	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/onehundy(H), slot_l_store)
+	world << "<b><big>[H.real_name] is the [title]!</big></b>"
 	H.add_note("Role", "You are the <b>[title]</b>. You have come to visit the town and its occupants.")
 
 	H.setStat("strength", STAT_MEDIUM_HIGH)
@@ -701,7 +702,6 @@
 
 	spawn_location = "JoinLateRO"
 
-	is_occupation = TRUE
 	is_imperator = TRUE 
 
 	min_positions = 4
@@ -734,7 +734,7 @@
 
 ///GERMAN INVADERS///
 
-/datum/job/german/chieftain
+/datum/job/german/invader/chieftain
 	title = "Jarl"
 	en_meaning = "Chieftain"
 	rank_abbreviation = "Jarl"
@@ -745,10 +745,10 @@
 	is_commander = TRUE
 	is_officer = TRUE
 	is_german_invasion = TRUE
-	min_positions = 1
+	min_positions = 2
 	max_positions = 2
 
-/datum/job/german/chieftain/equip(var/mob/living/human/H)
+/datum/job/german/invader/chieftain/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 		//shoes
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/steppe_shoes(H), slot_shoes)
@@ -760,7 +760,7 @@
 		//weapons
 	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gaelic/iron(H), slot_r_hand)
 	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gaelic/iron(H), slot_l_hand)
-	H.add_note("Role", "You are a <b>[title]</b>, the chieftain of your tribe. Lead your men to plundering and glory!")
+	H.add_note("Role", "You are a <b>[title]</b>, the chieftain of your tribe. Will you lead your men to plunder and glory, liberate the Jews, or genocide everyone? The choice is up to you! Your men are awaiting your choice.")
 
 	H.setStat("strength", STAT_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
@@ -775,7 +775,7 @@
 	return TRUE
 
 
-/datum/job/german/swordsman
+/datum/job/german/invader/swordsman
 	title = "Sahsnotoz"
 	en_meaning = "Swordsman"
 	rank_abbreviation = ""
@@ -787,7 +787,7 @@
 	min_positions = 10
 	max_positions = 10
 
-/datum/job/german/swordsman/equip(var/mob/living/human/H)
+/datum/job/german/invader/swordsman/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 		//shoes
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/steppe_shoes(H), slot_shoes)
@@ -817,7 +817,7 @@
 
 	return TRUE
 
-/datum/job/german/axeman
+/datum/job/german/invader/axeman
 	title = "Teceitos"
 	en_meaning = "Axeman"
 	rank_abbreviation = ""
@@ -830,7 +830,7 @@
 	max_positions = 10
 
 
-/datum/job/german/axeman/equip(var/mob/living/human/H)
+/datum/job/german/invader/axeman/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 		//shoes
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
@@ -860,7 +860,7 @@
 	return TRUE
 
 
-/datum/job/german/spearman
+/datum/job/german/invader/spearman
 	title = "Framaharjoz"
 	en_meaning = "Spearman"
 	rank_abbreviation = ""
@@ -872,7 +872,7 @@
 	min_positions = 20
 	max_positions = 20
 
-/datum/job/german/spearman/equip(var/mob/living/human/H)
+/datum/job/german/invader/spearman/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 		//shoes
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/steppe_shoes(H), slot_shoes)
@@ -905,7 +905,7 @@
 
 	return TRUE
 
-/datum/job/german/skirmisher
+/datum/job/german/invader/skirmisher
 	title = "Swainoz"
 	en_meaning = "Skirmisher"
 	rank_abbreviation = ""
@@ -917,7 +917,7 @@
 	min_positions = 10
 	max_positions = 10
 
-/datum/job/german/skirmisher/equip(var/mob/living/human/H)
+/datum/job/german/invader/skirmisher/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 		//shoes
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(H), slot_shoes)
@@ -946,14 +946,258 @@
 
 	return TRUE
 
+///ARAB INVADERS////
 
+/datum/job/arab
+	faction = "Human"
+
+/datum/job/arab/give_random_name(var/mob/living/human/H)
+	H.name = H.species.get_random_arab_name()
+	H.real_name = H.name
+
+/datum/job/arab/invader/lord
+	title = "Emir"
+	en_meaning = "Lord"
+	rank_abbreviation = "Emir"
+
+
+	spawn_location = "JoinLateAR"
+	is_officer = TRUE
+	is_commander = TRUE
+	whitelisted = TRUE
+	is_ancient = TRUE
+	arabic_invasion = TRUE
+
+	min_positions = 1
+	max_positions = 1
+
+/datum/job/arab/medieval_lord/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval/arab(H), slot_shoes)
+//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arabic_tunic(H), slot_w_uniform)
+//jacket
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/jacket/arabic_robe(H), slot_wear_suit)
+//head
+
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/turban(H), slot_head)
+
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/saif(H), slot_belt)
+
+	H.add_note("Role", "You are a <b>[title]</b>, the military leader of this group of soldiers. Do you wish to ransack the city, occupy it, or do diplomacy? The choice is up to you! Your men are completely loyal to your cause.")
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_NORMAL)
+	H.setStat("dexterity", STAT_HIGH)
+	H.setStat("swords", STAT_HIGH)
+	H.setStat("pistol", STAT_MEDIUM_HIGH)
+	H.setStat("bows", STAT_NORMAL)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+/datum/job/arab/invader/knight
+	title = "Mamluk"
+	en_meaning = "Heavy Infantry"
+	rank_abbreviation = "Mamluk"
+
+	spawn_location = "JoinLateAR"
+	is_officer = TRUE
+	is_ancient = TRUE
+	arabic_invasion = TRUE
+
+	min_positions = 2
+	max_positions = 5
+
+/datum/job/arab/invader/knight/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval/knight(H), slot_shoes)
+//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arabic_tunic(H), slot_w_uniform)
+//jacket
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/medieval/hauberk(H), slot_wear_suit)
+//head
+	if (prob(65))
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/medieval/arab2(H), slot_head)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/medieval/arab3(H), slot_head)
+
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/pike(H), slot_l_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/saif(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/arab_buckler(H), slot_back)
+	H.add_note("Role", "You are a <b>[title]</b>. Organize your men and obey your Emir's orders!")
+	H.setStat("strength", STAT_VERY_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_NORMAL)
+	H.setStat("dexterity", STAT_HIGH)
+	H.setStat("swords", STAT_VERY_HIGH)
+	H.setStat("pistol", STAT_MEDIUM_HIGH)
+	H.setStat("bows", STAT_MEDIUM_LOW)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+/datum/job/arab/invader/swordsman
+	title = "Sayaf"
+	en_meaning = "Swordsman"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateAR"
+
+	is_ancient = TRUE
+	arabic_invasion = TRUE
+
+
+	min_positions = 10
+	max_positions = 10
+
+/datum/job/arab/invader/swordsman/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval/arab(H), slot_shoes)
+//clothes
+	var/randcloth = pick(1,2,3)
+	if (randcloth == 1)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab1(H), slot_w_uniform)
+	else if (randcloth == 2)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab2(H), slot_w_uniform)
+	else if (randcloth == 3)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab3(H), slot_w_uniform)
+//jacket
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/medieval/chainmail(H), slot_wear_suit)
+
+//head
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/medieval/arab(H), slot_head)
+
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/scimitar(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/arab_buckler(H), slot_back)
+	H.add_note("Role", "You are a <b>[title]</b>, an arabic swordsman from the tribes. Obey your officers and Emir!")
+	H.setStat("strength", STAT_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_NORMAL)
+	H.setStat("dexterity", STAT_VERY_HIGH)
+	H.setStat("swords", STAT_VERY_HIGH)
+	H.setStat("pistol", STAT_MEDIUM_HIGH)
+	H.setStat("bows", STAT_MEDIUM_LOW)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+/datum/job/arab/invader/spearman
+	title = "Alraamih"
+	en_meaning = "Spearman"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateAR"
+
+	is_ancient = TRUE
+	arabic_invasion = TRUE
+
+
+	min_positions = 20
+	max_positions = 20
+
+/datum/job/arab/invader/spearman/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval/arab(H), slot_shoes)
+//clothes
+	var/randcloth = pick(1,2,3)
+	if (randcloth == 1)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab1(H), slot_w_uniform)
+	else if (randcloth == 2)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab2(H), slot_w_uniform)
+	else if (randcloth == 3)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab3(H), slot_w_uniform)
+
+//jacket
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/medieval/chainmail(H), slot_wear_suit)
+
+//head
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/medieval/arab(H), slot_head)
+
+	var/randspear = pick(1,2,3)
+	if (randspear == 1)
+		H.equip_to_slot_or_del(new /obj/item/weapon/material/spear(H), slot_belt)
+	if (randspear == 2)
+		H.equip_to_slot_or_del(new /obj/item/weapon/material/pike(H), slot_belt)
+	if (randspear == 3)
+		H.equip_to_slot_or_del(new /obj/item/weapon/material/halberd(H), slot_belt)
+
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/arab_buckler(H), slot_back)
+	H.add_note("Role", "You are a <b>[title]</b>, an arabic pikeman. Use hit-and-run tactics to defeat the infidels!")
+	H.setStat("strength", STAT_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_VERY_HIGH)
+	H.setStat("swords", STAT_HIGH)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_MEDIUM_LOW)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+/datum/job/arab/invader/archer
+	title = "Rami Alsiham"
+	en_meaning = "Archer"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateAR"
+
+	is_ancient = TRUE
+	arabic_invasion = TRUE
+
+	min_positions = 6
+	max_positions = 40
+
+/datum/job/arab/invader/archer/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/medieval/arab(H), slot_shoes)
+//clothes
+	var/randcloth = pick(1,2,3)
+	if (randcloth == 1)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab1(H), slot_w_uniform)
+	else if (randcloth == 2)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab2(H), slot_w_uniform)
+	else if (randcloth == 3)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/medieval/arab3(H), slot_w_uniform)
+
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/medieval/chainmail(H), slot_wear_suit)
+
+//head
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/medieval/arab(H), slot_head)
+
+
+	H.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/bow/longbow(H), slot_l_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/quiver/full(H), slot_back)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/smallsword(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/arab_buckler(H), slot_r_hand)
+	H.add_note("Role", "You are a <b>[title]</b>. Support your infantry, and obey your officers and Emir!")
+	H.setStat("strength", STAT_NORMAL)
+	H.setStat("crafting", STAT_MEDIUM_HIGH)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_VERY_HIGH)
+	H.setStat("swords", STAT_MEDIUM_LOW)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_VERY_HIGH)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
 
 /*
 TODO:
 1.Add imperator being able to start a war through his officer tab. This happens if the imperator fucking hates
 what the governor is doing and can invade and take over. This spawns in the First Legion, a very strong roman army
 
-2. add the g*rman tribals
+2. add the g*rman tribals DONE
 
 3. add the arabs
 
