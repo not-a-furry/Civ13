@@ -64,6 +64,7 @@
 /datum/job/var/can_be_female = FALSE
 /datum/job/var/is_occupation = FALSE
 /datum/job/var/is_imperator = FALSE //roman occupation event TODO
+/datum/job/var/imperator_war = FALSE // roman ocupation event, triggered by emperor. basically emperor vs governor TODO
 /datum/job/var/is_german_invasion = FALSE //roman occupation event TODO
 /datum/job/var/is_greek_invasion = FALSE //roman occupation event TODO
 /datum/job/var/is_israelite_uprising = FALSE //roman occupation event TODO

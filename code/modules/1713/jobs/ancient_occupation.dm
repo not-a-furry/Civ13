@@ -133,7 +133,7 @@
 
 	is_occupation = TRUE
 	min_positions = 12
-	max_positions = 200
+	max_positions = 50
 
 /datum/job/roman/garrison/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
@@ -286,7 +286,7 @@
 	spawn_location = "JoinLateCivC"
 	en_meaning = "Jewish Citizen"
 	min_positions = 1
-	max_positions = 100
+	max_positions = 500
 	is_occupation = TRUE
 
 /datum/job/israelite/citizen/citizen/equip(var/mob/living/human/H)
@@ -734,3 +734,16 @@
 
 	return TRUE
 
+/*
+TODO:
+1.Add imperator being able to start a war through his officer tab. This happens if the imperator fucking hates
+what the governor is doing and can invade and take over. This spawns in the First Legion, a very strong roman army
+
+2. add the g*rman tribals
+
+3. add the arabs
+
+4. add the israeli uprising units, make the leader an officer
+
+5. lastly, add the greek invaders!
+*/
