@@ -16,9 +16,8 @@
 	title = "Propraetor"
 	en_meaning = "Governor"
 	rank_abbreviation = "Propraetor"
-
 	spawn_location = "JoinLateROG"
-
+	
 	is_commander = TRUE
 	is_occupation = TRUE
 	is_officer = TRUE
@@ -32,11 +31,9 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
 		//clothes
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga/purple(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/weapon/key/ancient/roman(H), slot_l_store)
 	H.equip_to_slot_or_del(new /obj/item/weapon/horn(H), slot_r_store)
-	H.equip_to_slot_or_del(new /obj/item/clothing/head/laurelcrown(H), slot_head)
 	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/onehundy(H), slot_l_store)
-	H.add_note("Role", "You are the <b>[title]</b>. You are responsable for organizing the games. You can use the interface of the <b>Gladiator Combat Organizer</b> to turn automatic mode on and off. If you decide to manage the games yourself, you will need to attribute the victory using the <b>Gladiator Ledger</b> - click on it and choose the winner!")
+	H.add_note("Role", "You are the <b>[title]</b>. Govern over your people through violent crucifixion and benevolent gladiatorial games! Do not anger the locals too much though, they are prone to revolting.")
 
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_MEDIUM_HIGH)
@@ -427,3 +424,83 @@
 	H.setStat("medical", STAT_HIGH)
 	give_random_name(H)
 	return TRUE
+
+/////////EVENTS////////////
+
+/datum/job/roman/imperator //emperor visits!
+	title = "Imperator"
+	en_meaning = "Emperor"
+	rank_abbreviation = "Imperator"
+	spawn_location = "JoinLateROG"
+	
+	is_commander = TRUE
+	is_occupation = TRUE
+	is_officer = TRUE
+	whitelisted = TRUE
+	is_imperator = TRUE
+
+	min_positions = 1
+	max_positions = 1
+
+/datum/job/roman/emperor/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+		//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga/purple(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/weapon/horn(H), slot_r_store)
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/laurelcrown(H), slot_head) //emperor bears the wreath of Caesar. All hail to him!
+	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/onehundy(H), slot_l_store)
+	H.add_note("Role", "You are the <b>[title]</b>. You have come to visit the town and its occupants.")
+
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_MEDIUM_HIGH)
+	H.setStat("rifle", STAT_MEDIUM_HIGH)
+	H.setStat("dexterity", STAT_MEDIUM_HIGH)
+	H.setStat("swords", STAT_MEDIUM_HIGH)
+	H.setStat("pistol", STAT_MEDIUM_HIGH)
+	H.setStat("bows", STAT_MEDIUM_HIGH)
+	H.setStat("medical", STAT_VERY_HIGH)
+	give_random_name(H)
+	return TRUE
+
+/datum/job/roman/praetorian //emperor visits!
+	title = "Praetorian"
+	en_meaning = "Imperial Guard"
+	rank_abbreviation = "Praetorian"
+
+	spawn_location = "JoinLateRO"
+
+	is_commander = TRUE
+	is_occupation = TRUE
+	is_officer = TRUE
+	is_imperator = TRUE 
+
+	min_positions = 4
+	max_positions = 4
+
+/datum/job/roman/praetorian/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+		//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/roman_centurion(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/cape(H), slot_wear_suit)
+		//head
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/roman_centurion(H), slot_head)
+		//weapons
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gladius/iron(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/fifty(H), slot_l_store)
+	H.add_note("Role", "You are a <b>[title]</b>, the protector the Emperor. You are responsible for keeping them safe and secure, at the cost of your own life. You only listen to the Emperor. Don't forget - bribery and corruption always played a part of Roman history...")
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_NORMAL)
+	H.setStat("swords", STAT_HIGH)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_NORMAL)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
+

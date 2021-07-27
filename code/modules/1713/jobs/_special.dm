@@ -64,6 +64,12 @@
 /datum/job/var/is_upa = FALSE
 /datum/job/var/can_be_female = FALSE
 /datum/job/var/is_occupation = FALSE
+/datum/job/var/is_imperator = FALSE //roman occupation event TODO
+/datum/job/var/is_german_invasion = FALSE //roman occupation event TODO
+/datum/job/var/is_greek_invasion = FALSE //roman occupation event TODO
+/datum/job/var/is_israelite_uprising = FALSE //roman occupation event TODO
+/datum/job/var/is_civil_war = FALSE //roman occupation event TODO
+/datum/job/var/arabic_invasion = FALSE //arabs invade! TODO
 /datum/job/var/squad = 0
 /datum/job/var/uses_squads = FALSE
 /datum/job/var/is_yeltsin = FALSE
