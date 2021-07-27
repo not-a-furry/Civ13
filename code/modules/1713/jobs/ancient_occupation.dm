@@ -137,7 +137,7 @@
 	min_positions = 12
 	max_positions = 200
 
-/datum/job/roman/soldier/equip(var/mob/living/human/H)
+/datum/job/roman/garrison/equip(var/mob/living/human/H)
 	if (!H)	return FALSE
 		//shoes
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
@@ -152,6 +152,54 @@
 	H.equip_to_slot_or_del(new /obj/item/weapon/material/pilum(H), slot_r_hand)
 	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/twenty(H), slot_l_store)
 	H.add_note("Role", "You are a <b>[title]</b>, a soldier of the Roman Army. You are equipped with two <b>Pila</b> javelins, your shield and a <b>Gladius</b>.")
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_NORMAL)
+	H.setStat("swords", STAT_HIGH)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_NORMAL)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+/datum/job/roman/auxilia/israelite
+	default_language = "Latin"
+	additional_languages = list("Hebrew" = 100, "Greek" = 10, "Arabic" = 5)
+	H.name = H.species.get_random_hebrew_name(H.gender)
+	H.real_name = H.name
+	H.circumcised = TRUE
+	title = "Israel Auxilia"
+	en_meaning = "Israel Auxiliary"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateRO"
+
+	is_occupation = TRUE
+	min_positions = 12
+	max_positions = 200
+
+/datum/job/roman/auxilia/israelite/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
+//clothes
+	var/randcloth = pick(1,2,3)
+	if (randcloth == 1)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/greek1(H), slot_w_uniform)
+	else if (randcloth == 2)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/greek2(H), slot_w_uniform)
+	else if (randcloth == 3)
+		H.equip_to_slot_or_del(new /obj/item/clothing/under/greek3(H), slot_w_uniform)
+//head
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/greek(H), slot_head)
+//weapons
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/xiphos/bronze(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/aspis(H), slot_l_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/spear/sarissa(H), slot_r_hand)
+	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/ten(H), slot_l_store)
+	H.add_note("Role", "You are a <b>[title]</b>, hired by the Romans to join their foreign legion of the auxiliaries. Your loyalty is to money.")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
 	H.setStat("rifle", STAT_LOW)
@@ -231,6 +279,7 @@
 /datum/job/israelite
 	faction = "Human"
 	is_ancient = TRUE
+	H.circumcised = TRUE //this is a thing?
 /datum/job/israelite/give_random_name(var/mob/living/human/H)
 	H.name = H.species.get_random_hebrew_name()
 	H.real_name = H.name
