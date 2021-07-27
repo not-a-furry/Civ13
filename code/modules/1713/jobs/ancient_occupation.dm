@@ -127,7 +127,7 @@
 
 /datum/job/roman/garrison
 	title = "Legionarius"
-	en_meaning = "Garrison"
+	en_meaning = "Roman Garrison Soldier"
 	rank_abbreviation = ""
 
 	spawn_location = "JoinLateRO"
@@ -388,7 +388,7 @@
 
 /datum/job/israelite/citizen/priest
 	title = "Rabbi"
-	en_meaning = "Rabbi"
+	en_meaning = "Priest"
 	rank_abbreviation = "Rabbi"
 
 	spawn_location = "JoinLateCivC"
@@ -1130,7 +1130,7 @@
 		H.equip_to_slot_or_del(new /obj/item/weapon/material/halberd(H), slot_belt)
 
 	H.equip_to_slot_or_del(new /obj/item/weapon/shield/arab_buckler(H), slot_back)
-	H.add_note("Role", "You are a <b>[title]</b>, an arabic pikeman. You are the main infantry force. Follow your officer and Emir's orders!")
+	H.add_note("Role", "You are a <b>[title]</b>, an arabic pikeman. You are the main infantry force. Follow your officers and Emir's orders!")
 	H.setStat("strength", STAT_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
 	H.setStat("rifle", STAT_LOW)
