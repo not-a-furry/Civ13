@@ -701,9 +701,7 @@
 
 	spawn_location = "JoinLateRO"
 
-	is_commander = TRUE
 	is_occupation = TRUE
-	is_officer = TRUE
 	is_imperator = TRUE 
 
 	min_positions = 4
@@ -733,6 +731,222 @@
 	give_random_name(H)
 
 	return TRUE
+
+///GERMAN INVADERS///
+
+/datum/job/german/chieftain
+	title = "Jarl"
+	en_meaning = "Chieftain"
+	rank_abbreviation = "Jarl"
+
+	spawn_location = "JoinLateGE"
+	additional_languages = list("Latin" = 100)
+	is_ancient = TRUE
+	is_commander = TRUE
+	is_officer = TRUE
+	is_german_invasion = TRUE
+	min_positions = 1
+	max_positions = 2
+
+/datum/job/german/chieftain/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+		//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/steppe_shoes(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/celtic_red(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/medieval/bronze_chestplate(H), slot_wear_suit)
+		//head
+	H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/asterix/conspicious(H), slot_head)
+		//weapons
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gaelic/iron(H), slot_r_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gaelic/iron(H), slot_l_hand)
+	H.add_note("Role", "You are a <b>[title]</b>, the chieftain of your tribe. Lead your men to plundering and glory!")
+
+	H.setStat("strength", STAT_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_NORMAL)
+	H.setStat("swords", STAT_HIGH)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_NORMAL)
+	H.setStat("medical", STAT_MEDIUM_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+
+/datum/job/german/swordsman
+	title = "Sahsnotoz"
+	en_meaning = "Swordsman"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateGE"
+	is_ancient = TRUE
+	is_german_invasion = TRUE
+
+	min_positions = 10
+	max_positions = 10
+
+/datum/job/german/swordsman/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+		//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/steppe_shoes(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/celtic_short_braccae(H), slot_w_uniform)
+	H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/ancient/bronze_lamellar(H), slot_wear_suit)
+		//head
+	if (prob(50))
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/asterix(H), slot_head)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/horned(H), slot_head)
+		//weapons
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/longsword/iron(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/scutum(H), slot_back)
+
+	H.add_note("Role", "You are a <b>[title]</b>, a germanic swordsman.")
+
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_NORMAL)
+	H.setStat("swords", STAT_HIGH)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_LOW)
+	H.setStat("medical", STAT_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+/datum/job/german/axeman
+	title = "Teceitos"
+	en_meaning = "Axeman"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateGE"
+	is_ancient = TRUE
+	is_german_invasion = TRUE
+
+	min_positions = 10
+	max_positions = 10
+
+
+/datum/job/german/axeman/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+		//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/celtic_short_braccae(H), slot_w_uniform)
+		//head
+	if (prob(50))
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/foxpelt(H), slot_head)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/wolfpelt(H), slot_head)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/hatchet/tribal(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/hatchet/battleaxe(H), slot_l_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/blue_buckler(H), slot_back)
+
+	H.add_note("Role", "You are a <b>[title]</b>, a celtic axeman. Use your speed to manouver around the enemy and your axe to destroy their armor and shields.")
+
+	H.setStat("strength", STAT_VERY_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_HIGH)
+	H.setStat("swords", STAT_NORMAL)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_LOW)
+	H.setStat("medical", STAT_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+
+/datum/job/german/spearman
+	title = "Framaharjoz"
+	en_meaning = "Spearman"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateGE"
+	is_ancient = TRUE
+	is_german_invasion = TRUE
+
+	min_positions = 20
+	max_positions = 20
+
+/datum/job/german/spearman/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+		//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/steppe_shoes(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/celtic_long_braccae(H), slot_w_uniform)
+	if (prob(50))
+		H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/medieval/steppe_leather(H), slot_wear_suit)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/medieval/leather(H), slot_wear_suit)
+		//head
+	if (prob(50))
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/bearpelt/brown(H), slot_head)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/bearpelt/black(H), slot_head)
+		//weapons
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/pike(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/pike(H), slot_l_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/shield/scutum(H), slot_back)
+	H.add_note("Role", "You are a <b>[title]</b>, a germanic spearman.")
+
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_VERY_HIGH)
+	H.setStat("swords", STAT_NORMAL)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_LOW)
+	H.setStat("medical", STAT_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+/datum/job/german/skirmisher
+	title = "Swainoz"
+	en_meaning = "Skirmisher"
+	rank_abbreviation = ""
+
+	spawn_location = "JoinLateGE"
+	is_ancient = TRUE
+	is_german_invasion = TRUE
+
+	min_positions = 10
+	max_positions = 10
+
+/datum/job/german/skirmisher/equip(var/mob/living/human/H)
+	if (!H)	return FALSE
+		//shoes
+	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(H), slot_shoes)
+		//clothes
+	H.equip_to_slot_or_del(new /obj/item/clothing/under/celtic_green(H), slot_w_uniform)
+		//weapons
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/hatchet(H), slot_belt)
+	H.equip_to_slot_or_del(new /obj/item/weapon/gun/projectile/bow/shortbow(H), slot_l_hand)
+	H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/quiver/full(H), slot_back)
+		//head
+	if (prob(50))
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/sheeppelt(H), slot_head)
+	else
+		H.equip_to_slot_or_del(new /obj/item/clothing/head/goatpelt(H), slot_head)
+	H.add_note("Role", "You are a <b>[title]</b>, a germanic skirmisher.")
+
+	H.setStat("strength", STAT_MEDIUM_HIGH)
+	H.setStat("crafting", STAT_NORMAL)
+	H.setStat("rifle", STAT_LOW)
+	H.setStat("dexterity", STAT_VERY_HIGH)
+	H.setStat("swords", STAT_LOW)
+	H.setStat("pistol", STAT_LOW)
+	H.setStat("bows", STAT_HIGH)
+	H.setStat("medical", STAT_LOW)
+	give_random_name(H)
+
+	return TRUE
+
+
 
 /*
 TODO:
