@@ -40,10 +40,9 @@
 
 /obj/map_metadata/roman_occupation/no_loop_rom_occ
 	var/no_loop_fart = TRUE
-	var/randround = 0
 
-	if (no_loop_fart)
-		randround = pick(1,2,3)
+	if (no_loop_fart == TRUE)
+		var/randround = pick(1,2,3)
 		no_loop_fart = FALSE
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
