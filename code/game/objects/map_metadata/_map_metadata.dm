@@ -235,6 +235,8 @@ var/civmax_research = list(230,230,230)
 	var/ar_to_close_string = "None"
 	var/ar_to_close_timeleft = 0
 
+	var/eventid = 0 //events, such as invading arabs, for roman_occupation.dm. default 0 is nothing
+	var/amountofevents = 0
 /obj/map_metadata/New()
 	..()
 	map = src
@@ -383,6 +385,8 @@ var/civmax_research = list(230,230,230)
 		ordinal_age = 8
 	return
 
+/obj/map_metadata/proc/set_event_id(var/amountofevents)
+	eventid = pick(amountofevents)
 
 /obj/map_metadata/proc/autoresearch_proc()
 	if (autoresearch == TRUE && default_research < 230)
