@@ -33,7 +33,7 @@
 	force_mapgen = TRUE
 	is_RP = TRUE
 	amountofevents = 3
-	
+
 
 /obj/map_metadata/roman_occupation/New()
 	..()
@@ -48,3 +48,20 @@
 		. = TRUE
 	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
 		. = FALSE
+
+	if (eventid == 1)
+		if(J.is_imperator)
+			. = TRUE
+		else
+			. = FALSE
+	if (eventid == 2)
+		if(J.is_arabic_invasion)
+			. = TRUE
+		else
+			. = FALSE
+	if (eventid == 3)
+		if(J.is_german_invasion)
+			. = TRUE
+		else
+			. = FALSE
+	
