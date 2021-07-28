@@ -37,6 +37,7 @@
 	spawn(18000)
 		seasons()
 
+var/randround = pick(1,2,3)
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
 	if (J.is_occupation && J.title != "DONT USE" && ( istype(J, /datum/job/roman) || istype(J, /datum/job/israelite) ) )
@@ -57,7 +58,6 @@ bow down to his mere prescence and called the First Legion to annihilate them, t
 */
 
 //TODO: add ten minute delay to this
-	var/randround = pick(1,2,3)
 
 	if (randround == 1) //emperor visits
 		if (J.is_imperator)
