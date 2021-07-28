@@ -32,10 +32,6 @@
 	//is_singlefaction = TRUE
 	force_mapgen = TRUE
 	is_RP = TRUE
-/obj/map_metadata/roman_occupation/New()
-	..()
-	spawn(18000)
-		seasons()
 
 var/no_loop_fart = TRUE
 var/randround = 0
@@ -43,6 +39,12 @@ var/randround = 0
 if (no_loop_fart)
 	randround = pick(1,2,3)
 	no_loop_fart = FALSE
+
+/obj/map_metadata/roman_occupation/New()
+	..()
+	spawn(18000)
+		seasons()
+
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
