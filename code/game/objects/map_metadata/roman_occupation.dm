@@ -60,6 +60,13 @@ bow down to his mere prescence and called the First Legion to annihilate them, t
 
 //TODO: add ten minute delay to this
 
+	var/no_loop_fart = TRUE
+	var/randround = 0
+
+	if (no_loop_fart)
+		randround = pick(1,2,3)
+		no_loop_fart = FALSE
+		
 	if (randround == 1)
 		if (J.is_imperator)
 			. = TRUE
