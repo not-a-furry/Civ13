@@ -385,7 +385,7 @@ var/civmax_research = list(230,230,230)
 		ordinal_age = 8
 	return
 
-/obj/map_metadata/proc/set_event_id(var/amountofevents)
+/obj/map_metadata/proc/set_event_id(amountofevents)
 	eventid = pick(amountofevents)
 
 /obj/map_metadata/proc/autoresearch_proc()
