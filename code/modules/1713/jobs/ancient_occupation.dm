@@ -32,7 +32,7 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
 		//clothes
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga/purple(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/weapon/horn(H), slot_r_store)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gladius/iron(H), slot_belt)
 	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/onehundy(H), slot_l_store)
 	world << "<b><big>[H.real_name] is the [title]!</big></b>"
 	H.add_note("Role", "You are the <b>[title]</b>. Govern over your people through violent crucifixion and benevolent gladiatorial games! Do not anger the locals too much though, they are prone to revolting.")
@@ -678,7 +678,7 @@
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/roman(H), slot_shoes)
 		//clothes
 	H.equip_to_slot_or_del(new /obj/item/clothing/under/custom/toga/purple(H), slot_w_uniform)
-	H.equip_to_slot_or_del(new /obj/item/weapon/horn(H), slot_r_store)
+	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gladius/iron(H), slot_belt)
 	H.equip_to_slot_or_del(new /obj/item/clothing/head/laurelcrown(H), slot_head) //emperor bears the wreath of Caesar. All hail to him!
 	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/onehundy(H), slot_l_store)
 	world << "<b><big>[H.real_name] is the [title]!</big></b>"
