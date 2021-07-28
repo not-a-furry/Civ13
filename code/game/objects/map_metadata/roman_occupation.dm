@@ -38,27 +38,14 @@
 	spawn(18000)
 		seasons()
 
+var/no_loop_fart = FALSE
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
 	if (J.is_occupation && J.title != "DONT USE" && ( istype(J, /datum/job/roman) || istype(J, /datum/job/israelite) ) )
 		. = TRUE
 	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
 		. = FALSE
-
-/*
-I should really turn this into a module. Oh well! It goes right here, where it belongs. This determines the event of the round!
-To anyone reading this, please turn this into a module. I am a lazy fuck who cannot be bothered to, as it will take too much time out of
-my unemployed life. 
-
-So, what does this do, because this entire codebase is devoid of any documentation?
-This determines the event for the round. The events can be found in _special.dm. The roles can be found in ancient_occupation.dm. 
-The randround variable picks a number. Each event has a equal chance of becoming the event, because fuck it. Whether that be Germans
-commiting WW0 on the poor Jewish people, Arabs burning everything down, or the Emperor just being pissed off that the governor didn't
-bow down to his mere prescence and called the First Legion to annihilate them, this does it all!
-*/
-
-//TODO: add ten minute delay to this
-	/*
+	
 	if (randround == 1)
 		if (J.is_imperator)
 			. = TRUE
@@ -71,4 +58,4 @@ bow down to his mere prescence and called the First Legion to annihilate them, t
 		if (J.is_arabic_invasion)
 			. = TRUE
 			world << "<b><big>Tribes from the south have come to visit!</big></b>"
-	*/
+	
