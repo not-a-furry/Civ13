@@ -38,7 +38,12 @@
 	spawn(18000)
 		seasons()
 
-/var/randround = 1
+
+var/no_loop_fart = TRUE
+
+if (no_loop_fart)
+	var/randround = pick(1,2,3)
+	no_loop_fart = FALSE
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
@@ -46,17 +51,3 @@
 		. = TRUE
 	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
 		. = FALSE
-	
-	if (randround == 1)
-		if (J.is_imperator)
-			. = TRUE
-			world << "<b><big>The Imperator of the Roman Empire is visiting today!</big></b>"
-	if (randround == 2)
-		if (J.is_german_invasion)
-			. = TRUE
-			world << "<b><big>German tribes have been seen in the area...</big></b>"
-	else
-		if (J.is_arabic_invasion)
-			. = TRUE
-			world << "<b><big>Tribes from the south have come to visit!</big></b>"
-	
