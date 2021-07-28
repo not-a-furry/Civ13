@@ -50,3 +50,22 @@
 		. = TRUE
 	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
 		. = FALSE
+
+	//events//
+
+	if (randevent == 1)
+		if (J.is_imperator)
+			. = TRUE
+		else
+			. = FALSE
+	if (randevent == 2)
+		if (J.is_german_invasion)
+			. = TRUE
+		else
+			. = FALSE
+	if (randevent == 1) //could be else but i plan on expanding
+		if (J.is_arabic_invasion)
+			. = TRUE
+		else
+			. = FALSE
+		
