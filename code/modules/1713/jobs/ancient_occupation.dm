@@ -966,7 +966,7 @@
 	is_commander = TRUE
 	whitelisted = TRUE
 	is_ancient = TRUE
-	arabic_invasion = TRUE
+	is_arabic_invasion = TRUE
 
 	min_positions = 1
 	max_positions = 1
@@ -1006,7 +1006,7 @@
 	spawn_location = "JoinLateAR"
 	is_officer = TRUE
 	is_ancient = TRUE
-	arabic_invasion = TRUE
+	is_arabic_invasion = TRUE
 
 	min_positions = 2
 	max_positions = 5
@@ -1049,7 +1049,7 @@
 	spawn_location = "JoinLateAR"
 
 	is_ancient = TRUE
-	arabic_invasion = TRUE
+	is_arabic_invasion = TRUE
 
 
 	min_positions = 10
@@ -1096,7 +1096,7 @@
 	spawn_location = "JoinLateAR"
 
 	is_ancient = TRUE
-	arabic_invasion = TRUE
+	is_arabic_invasion = TRUE
 
 
 	min_positions = 20
@@ -1151,7 +1151,7 @@
 	spawn_location = "JoinLateAR"
 
 	is_ancient = TRUE
-	arabic_invasion = TRUE
+	is_arabic_invasion = TRUE
 
 	min_positions = 6
 	max_positions = 40
