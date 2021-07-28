@@ -37,7 +37,12 @@
 	spawn(18000)
 		seasons()
 
-var/randround = pick(1,2,3)
+var/do_this_once_retard = TRUE //TODO: better implementation of this garbage
+
+if (do_this_once_retard)
+	var/randround = pick(1,2,3)
+	do_this_once_retard = FALSE
+
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
 	if (J.is_occupation && J.title != "DONT USE" && ( istype(J, /datum/job/roman) || istype(J, /datum/job/israelite) ) )
