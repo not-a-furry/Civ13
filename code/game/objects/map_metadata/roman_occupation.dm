@@ -46,22 +46,15 @@
 	..()
 	if (J.is_occupation && J.title != "DONT USE" && ( istype(J, /datum/job/roman) || istype(J, /datum/job/israelite) ) )
 		. = TRUE
-	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
-		. = FALSE
 
-	if (eventid == 1)
+	if (eventid == 0 || eventid == 1)
 		if(J.is_imperator)
 			. = TRUE
-		else
-			. = FALSE
-	if (eventid == 2)
+	else if (eventid == 2)
 		if(J.is_arabic_invasion)
 			. = TRUE
-		else
-			. = FALSE
-	if (eventid == 3)
+	else if (eventid == 3)
 		if(J.is_german_invasion)
 			. = TRUE
-		else
-			. = FALSE
-	
+	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
+		. = FALSE
