@@ -38,8 +38,8 @@
 	spawn(18000)
 		seasons()
 
-var/no_loop_fart = TRUE
-if (no_loop_fart == FALSE)
+var/no_loop_41241 = TRUE
+if (no_loop_41241 == FALSE)
 	//var/randround = pick(1,2,3)
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
