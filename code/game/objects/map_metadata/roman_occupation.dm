@@ -37,11 +37,7 @@
 	spawn(18000)
 		seasons()
 
-var/do_this_once_retard = TRUE //TODO: better implementation of this garbage
-
-if (do_this_once_retard)
-	var/randround = pick(1,2,3)
-	do_this_once_retard = FALSE
+var/randround = pick(1,2,3)
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
