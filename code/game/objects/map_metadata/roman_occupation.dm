@@ -33,14 +33,16 @@
 	force_mapgen = TRUE
 	is_RP = TRUE
 
+
 /obj/map_metadata/roman_occupation/New()
 	..()
 	spawn(18000)
 		seasons()
 
 	var/no_loop_rom_occ = TRUE
+	var/randevent = 0
 	if (no_loop_rom_occ)
-		var/randevent = pick(1,2,3)
+		randevent = pick(1,2,3)
 		no_loop_rom_occ = FALSE
 
 
