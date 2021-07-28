@@ -39,13 +39,6 @@
 	spawn(18000)
 		seasons()
 
-	var/no_loop_rom_occ = TRUE
-	var/randevent = 0
-	if (no_loop_rom_occ)
-		randevent = pick(1,2,3)
-		no_loop_rom_occ = FALSE
-
-
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
 	if (J.is_occupation && J.title != "DONT USE" && ( istype(J, /datum/job/roman) || istype(J, /datum/job/israelite) ) )
@@ -55,17 +48,23 @@
 
 	//events//
 
-	if (var/randevent == 1)
+	var/no_loop_rom_occ = TRUE
+	var/randevent = 0
+	if (no_loop_rom_occ)
+		randevent = pick(1,2,3)
+		no_loop_rom_occ = FALSE
+
+	if (randevent == 1)
 		if (J.is_imperator)
 			. = TRUE
 		else
 			. = FALSE
-	if (var/randevent == 2)
+	if (randevent == 2)
 		if (J.is_german_invasion)
 			. = TRUE
 		else
 			. = FALSE
-	if (var/randevent == 1) //could be else but i plan on expanding
+	if (randevent == 1) //could be else but i plan on expanding
 		if (J.is_arabic_invasion)
 			. = TRUE
 		else
