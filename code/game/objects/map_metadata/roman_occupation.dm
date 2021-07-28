@@ -55,17 +55,17 @@
 
 	//events//
 
-	if (randevent == 1)
+	if (var/randevent == 1)
 		if (J.is_imperator)
 			. = TRUE
 		else
 			. = FALSE
-	if (randevent == 2)
+	if (var/randevent == 2)
 		if (J.is_german_invasion)
 			. = TRUE
 		else
 			. = FALSE
-	if (randevent == 1) //could be else but i plan on expanding
+	if (var/randevent == 1) //could be else but i plan on expanding
 		if (J.is_arabic_invasion)
 			. = TRUE
 		else
