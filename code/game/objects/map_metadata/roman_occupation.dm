@@ -12,7 +12,7 @@
 		ISRAELITE,
 		GERMAN,
 		ARAB,
-		GREEK,)
+		GREEK)
 
 	roundend_condition_sides = list(
 		list(ROMAN) = /area/caribbean/british,
@@ -32,13 +32,6 @@
 	//is_singlefaction = TRUE
 	force_mapgen = TRUE
 	is_RP = TRUE
-
-var/no_loop_fart = TRUE
-var/randround = 0
-
-if (no_loop_fart)
-	randround = pick(1,2,3)
-	no_loop_fart = FALSE
 
 /obj/map_metadata/roman_occupation/New()
 	..()
