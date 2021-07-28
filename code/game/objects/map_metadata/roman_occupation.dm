@@ -69,3 +69,5 @@
 			. = TRUE
 		else
 			. = FALSE
+	else
+		world << "null"
