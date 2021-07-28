@@ -38,9 +38,7 @@
 	spawn(18000)
 		seasons()
 
-var/randround = null
-if (randround == null)
-	randround = pick(1,2,3)
+/var/randround = 1
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
