@@ -36,10 +36,12 @@
 	..()
 	spawn(18000)
 		seasons()
+
 var/no_loop_roman_occupation = FALSE
+var/randround = 0
 
 if (no_loop_roman_occupation == FALSE)
-	var/randround = pick(1,2,3)
+	randround = pick(1,2,3)
 	no_loop_roman_occupation = TRUE
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
@@ -63,7 +65,7 @@ bow down to his mere prescence and called the First Legion to annihilate them, t
 
 //TODO: add ten minute delay to this
 
-	if (randround == 1) //emperor visits
+	if (randround == 1)
 		if (J.is_imperator)
 			. = TRUE
 			world << "<b><big>The Imperator of the Roman Empire is visiting today!</big></b>"
