@@ -39,7 +39,8 @@
 		seasons()
 
 var/no_loop_fart = TRUE
-var/randround = pick(1,2,3)
+if (no_loop_fart == FALSE)
+	//var/randround = pick(1,2,3)
 
 /obj/map_metadata/roman_occupation/job_enabled_specialcheck(var/datum/job/J)
 	..()
