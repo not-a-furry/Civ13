@@ -37,7 +37,8 @@
 
 /obj/map_metadata/roman_occupation/New()
 	..()
-	set_event_id()
+	spawn(18000)
+		set_event_id()
 	spawn(18000)
 		seasons()
 		
@@ -49,7 +50,7 @@
 	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
 		. = FALSE
 
-	if (eventid == 0 || eventid == 1)
+	if (eventid == 1)
 		if(J.is_imperator)
 			world << "<b><big>the emperor has come</big></b>"
 			. = TRUE
