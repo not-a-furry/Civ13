@@ -37,7 +37,7 @@
 
 /obj/map_metadata/roman_occupation/New()
 	..()
-	spawn(18000)
+	spawn(30)
 		set_event_id()
 	spawn(18000)
 		seasons()
