@@ -108,7 +108,7 @@ var/global/list/valid_coordinates = list()
 	announcement_cooldown = world.time+1800
 	log_admin("Faction Announcement: [key_name(usr)] - [messaget] : [message]")
 
-/mob/living/human/proc/Summon_Legion()
+/mob/living/human/proc/Summon_Legion(legion_summoned)
 	set category = "Officer"
 	set name = "Summon First Legion"
 	set desc = "Call in the finest legion in the empire."
