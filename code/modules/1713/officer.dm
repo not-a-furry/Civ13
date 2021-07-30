@@ -117,7 +117,8 @@ var/global/list/valid_coordinates = list()
 	var/confirm = WWinput(src, "Are you sure?", "Summoning Confirmation", "Yes", list("Yes", "No"))
 
 	if (!summoned_legion)
-		usr << "<span class = 'notice'>You already summoned your legion!</b>.</span>"
+		if (confirm == "No")
+			usr << "<span class = 'notice'>You already summoned your legion!</b></span>"
 		return
 
 	if (confirm == "Yes" && summoned_legion)

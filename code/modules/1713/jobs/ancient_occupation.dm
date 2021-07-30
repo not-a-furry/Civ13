@@ -759,7 +759,7 @@
 		//weapons
 	H.equip_to_slot_or_del(new /obj/item/weapon/material/sword/gladius/iron(H), slot_belt)
 	H.equip_to_slot_or_del(new /obj/item/stack/money/dollar/fifty(H), slot_l_store)
-	H.add_note("Role", "You are a <b>[title]</b>, the protector the Emperor. You are responsible for keeping them safe and secure, at the cost of your own life. You only listen to the Emperor. Don't forget - bribery and corruption always played a part of Roman history...")
+	H.add_note("Role", "You are a <b>[title]</b>, the finest men in the Emperor. Your loyalty to the Emperor is unmatched.")
 	H.setStat("strength", STAT_MEDIUM_HIGH)
 	H.setStat("crafting", STAT_NORMAL)
 	H.setStat("rifle", STAT_LOW)
