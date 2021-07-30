@@ -64,6 +64,7 @@
 /datum/job/var/can_be_female = FALSE
 /datum/job/var/is_occupation = FALSE
 /datum/job/var/is_imperator = FALSE //roman occupation event TODO
+/datum/job/var/is_imperator_emperor = FALSE
 /datum/job/var/is_imperator_legion = FALSE // roman ocupation event, triggered by emperor. basically emperor vs governor TODO
 /datum/job/var/is_german_invasion = FALSE //roman occupation event TODO
 /datum/job/var/is_greek_invasion = FALSE //roman occupation event TODO
@@ -213,9 +214,9 @@
 		return "Pirate crew"
 	return null
 
-/datum/job/update_character(var/mob/living/human/H, legion_summoned)
+/datum/job/update_character(var/mob/living/human/H)
 	..()
-	if (is_imperator && !legion_summoned)
+	if (is_imperator_emperor)
 		H.make_imperator_summon()
 		H.add_note("Emperor", "As the Emperor, you can call upon your First Legion.</span>")
 	if (is_officer || can_get_coordinates)

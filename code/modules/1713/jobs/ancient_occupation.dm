@@ -669,6 +669,7 @@
 	is_officer = TRUE
 	whitelisted = TRUE
 	is_imperator = TRUE
+	is_imperator_emperor = TRUE
 
 	min_positions = 1
 	max_positions = 1
