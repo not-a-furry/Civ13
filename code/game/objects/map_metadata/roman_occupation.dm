@@ -47,31 +47,23 @@
 	..()
 	if (J.is_occupation && J.title != "DONT USE" && ( istype(J, /datum/job/roman) || istype(J, /datum/job/israelite) ) )
 		. = TRUE
-	else
-		. = FALSE
 
 	if (eventid == 1)
 		if(J.is_imperator)
 			world << "<b><big>the emperor has come</big></b>"
 			. = TRUE
-		else
-			. = FALSE
 
 	else if (eventid == 2)
 
 		if(J.is_arabic_invasion)
 			world << "<b><big>the arabs has come</big></b>"
 			. = TRUE
-		else 
-			. = FALSE
 
 	else if (eventid == 3)
 	
 		if(J.is_german_invasion)
 			world << "<b><big>the g*rmans has come</big></b>"
 			. = TRUE
-		else
-			. = FALSE
 
 	else
 		world << "null"
