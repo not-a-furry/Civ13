@@ -47,16 +47,16 @@
 	..()
 	if (J.is_occupation && J.title != "DONT USE" && ( istype(J, /datum/job/roman) || istype(J, /datum/job/israelite) ) )
 		. = TRUE
-	
-	else if (eventid == 1)
-		if(J.is_imperator)
-			world << "<b><big>the emperor has come</big></b>"
-			. = TRUE
-
 	else  //wont work without this for some fucking reason. what the fuck does this accomplish? absolutely nothing. it's fucking bullshit
 		. = FALSE
 
-	if (eventid == 2)
+	if (eventid == 1)
+		if(J.is_imperator)
+			world << "<b><big>the emperor has come</big></b>"
+			. = TRUE
+		else
+			. = FALSE
+	else if (eventid == 2)
 
 		if(J.is_arabic_invasion)
 			world << "<b><big>the arabs has come</big></b>"
