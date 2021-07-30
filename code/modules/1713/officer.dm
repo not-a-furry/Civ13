@@ -5,6 +5,7 @@
 var/global/list/valid_coordinates = list()
 /mob/living/human/var/checking_coords[4]
 /mob/living/human/var/can_check_distant_coordinates = FALSE
+/mob/living/human/var/summon_once = TRUE
 
 /mob/living/human/proc/make_artillery_officer()
 	verbs += /mob/living/human/proc/Check_Coordinates
@@ -25,7 +26,7 @@ var/global/list/valid_coordinates = list()
 /mob/living/human/proc/remove_commander()
 	verbs -= /mob/living/human/proc/Commander_Announcement
 
-/mob/living/human/proc/make_imperator()
+/mob/living/human/proc/make_imperator_summon()
 	verbs += /mob/living/human/proc/Summon_Legion
 	
 
@@ -108,13 +109,19 @@ var/global/list/valid_coordinates = list()
 	announcement_cooldown = world.time+1800
 	log_admin("Faction Announcement: [key_name(usr)] - [messaget] : [message]")
 
-/mob/living/human/proc/Summon_Legion(legion_summoned)
+/mob/living/human/proc/Summon_Legion()
 	set category = "Officer"
 	set name = "Summon First Legion"
 	set desc = "Call in the finest legion in the empire."
 
 	var/confirm = WWinput(src, "Are you sure?", "Summoning Confirmation", "Yes", list("Yes", "No"))
-	if (confirm == "Yes" && !legion_summoned)
+
+	if (!summon_once)
+		usr << "<span class = 'notice'>You already summoned your legion!</b>.</span>"
+		return
+
+	if (confirm == "Yes" && summon_once)
+		summon_once = !summon_once
 		var/messaget = "Reason"
 		var/message = input("Global message to send:", "IC Announcement", null, null)
 		if (message)
@@ -125,14 +132,8 @@ var/global/list/valid_coordinates = list()
 				messaget = "[name] has called upon his legion! Reason::"
 				M.show_message("<big><span class=notice><b>[messaget]</b></big><p style='text-indent: 50px'>[message]</p></span>", 2)
 			log_admin("Summoning Reason: [key_name(usr)] - [messaget] : [message]")
-		legion_summoned = TRUE // UH OH, RUN!!!
 
 		log_admin("Faction Announcement: [key_name(usr)] - [messaget] : [message]")
-
-	if (legion_summoned)
-		usr << "<span class = 'warning'>You already summoned your legion!</span>"
-
-		
 
 	log_admin("[key_name(usr)] summoned the legions!.")
 	message_admins("<span class = 'notice'>[key_name_admin(usr)] used summon legion.</span>", TRUE)

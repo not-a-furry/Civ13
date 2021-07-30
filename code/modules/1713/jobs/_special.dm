@@ -215,8 +215,8 @@
 
 /datum/job/update_character(var/mob/living/human/H)
 	..()
-	if (is_imperator)
-		H.make_imperator()
+	if (is_imperator && !legion_summoned)
+		H.make_imperator_summon()
 		H.add_note("Emperor", "As the Emperor, you can call upon your First Legion.</span>")
 	if (is_officer || can_get_coordinates)
 		H.make_artillery_officer()
