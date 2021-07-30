@@ -52,6 +52,9 @@
 		if(J.is_imperator)
 			world << "<b><big>the emperor has come</big></b>"
 			. = TRUE
+		if (legion_summoned)
+			if (J.is_imperator_legion)
+				. = TRUE
 
 	else if (eventid == 2)
 
