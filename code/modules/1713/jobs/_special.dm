@@ -213,7 +213,7 @@
 		return "Pirate crew"
 	return null
 
-/datum/job/update_character(var/mob/living/human/H)
+/datum/job/update_character(var/mob/living/human/H, legion_summoned)
 	..()
 	if (is_imperator && !legion_summoned)
 		H.make_imperator_summon()
