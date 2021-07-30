@@ -386,7 +386,7 @@ var/civmax_research = list(230,230,230)
 	return
 
 /obj/map_metadata/proc/set_event_id(amountofevents)
-	eventid = pick(1) // i dunno how to feed pick with the amount of events, ex. pick(3) = pick(1,2,3). TODO: change to (0,1,2,3)
+	eventid = pick(2) // i dunno how to feed pick with the amount of events, ex. pick(3) = pick(1,2,3). TODO: change to (0,1,2,3)
 
 /obj/map_metadata/proc/autoresearch_proc()
 	if (autoresearch == TRUE && default_research < 230)
