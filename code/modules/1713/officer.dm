@@ -5,7 +5,7 @@
 var/global/list/valid_coordinates = list()
 /mob/living/human/var/checking_coords[4]
 /mob/living/human/var/can_check_distant_coordinates = FALSE
-/mob/living/human/var/summon_once = TRUE
+/mob/living/human/var/summoned_legion = TRUE
 
 /mob/living/human/proc/make_artillery_officer()
 	verbs += /mob/living/human/proc/Check_Coordinates
@@ -116,12 +116,12 @@ var/global/list/valid_coordinates = list()
 
 	var/confirm = WWinput(src, "Are you sure?", "Summoning Confirmation", "Yes", list("Yes", "No"))
 
-	if (!summon_once)
+	if (!summoned_legion)
 		usr << "<span class = 'notice'>You already summoned your legion!</b>.</span>"
 		return
 
-	if (confirm == "Yes" && summon_once)
-		summon_once = !summon_once
+	if (confirm == "Yes" && summoned_legion)
+		summoned_legion = !summoned_legion
 		var/messaget = "Reason"
 		var/message = input("Global message to send:", "IC Announcement", null, null)
 		if (message)
